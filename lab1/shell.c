@@ -61,7 +61,7 @@ int main() {
 	// Execute the command
 	// Remember to check if there is a command (i.e. value of nargs)
 	// TODO: Step 3 call doCommand with the right arguments
-
+	doCommand(param1, param2);
 	// print prompt
 	printf("%%> ");
 	fflush(stdout);
@@ -153,32 +153,13 @@ typedef struct {
 // of strings and command handling funciton names
 
 commandStruct commandArray[] = {
-	{"exit", exitFunction},
-	{"cd", cdFunction},
-	{"ls", lsFunction},
-	{"pwd", pwdFunction}
+	{"exit", exitFunc},
+	{"cd", cdFunc},
+	{"ls", lsFunc},
+	{"pwd", pwdFunc},
 	{NULL, NULL}
 };
 
-void exitFunction()
-{
-	exit(0);
-}
-
-void cdFunction()
-{
-	
-}
-
-void lsFunction()
-{
-
-}
-
-void pwdFunction()
-{
-
-}
 
 //+
 // Function:	doCommand
@@ -197,6 +178,36 @@ void pwdFunction()
 void doCommand(char * args[], int nargs){
    // TODO Step 5 this function is small
    //  this is the command search loop
+	int i = 0;
+	for (i = 0; i < nargs; i++)
+	{
+		if (strcmp(*args[i],args[0]))
+		{
+			if (strcmp(*args[i], "exit") == 0)
+			{
+				exitFunc();
+			}
+
+			if (strcmp(*args[i], "cd") == 0)
+			{
+				cdFunc();
+			}
+
+			if (strcmp(*args[i], "ls") == 0)
+			{
+				lsFunc();
+			}
+
+			if (strcmp(*args[i], "pwd") == 0)
+			{
+				pwdFunc();
+			}
+
+		}
+		else if (args[i] == NULL) break;
+
+		else printf("error command not recognized");
+	}
 }
 
 //////////////////////////////////////////////////
@@ -226,4 +237,26 @@ void doCommand(char * args[], int nargs){
 // e.g. void exitFunc(char * args[], int nargs){
 // }
 
+void exitFunc(char *args[], int nargs)
+{
+	exit(0);
+}
+
+
+
 // TODO step 6 put rest of command handling functions here
+
+void cdFunc(char *args[], int nargs)
+{
+	
+}
+
+void lsFunc(char *args[], int nargs)
+{
+	
+}
+
+void pwdFunc(char *args[], int nargs)
+{
+	
+}
