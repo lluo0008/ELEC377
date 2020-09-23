@@ -132,9 +132,12 @@ typedef void (*command)(char* args[], int validArgs);
 // TODO STEP 3b use the typedef above (Step 3a) to make a two element
 // struct. The first is a char * for the name of the command
 // the other is a function pointer for the command handling function
-// typedef struct {
-//
-// } typename;
+
+typedef struct {
+	char *cmdName;
+	command cmd;
+} commandStruct;
+
 
 
 // prototypes for command handling functions
@@ -149,6 +152,33 @@ typedef void (*command)(char* args[], int validArgs);
 // the type above that contains initializers
 // of strings and command handling funciton names
 
+commandStruct commandArray[] = {
+	{"exit", exitFunction},
+	{"cd", cdFunction},
+	{"ls", lsFunction},
+	{"pwd", pwdFunction}
+	{NULL, NULL}
+};
+
+void exitFunction()
+{
+	exit(0);
+}
+
+void cdFunction()
+{
+	
+}
+
+void lsFunction()
+{
+
+}
+
+void pwdFunction()
+{
+
+}
 
 //+
 // Function:	doCommand
