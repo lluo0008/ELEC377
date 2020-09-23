@@ -123,6 +123,8 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
 // See the description of the function prototypes at the bottom of
 // the file in the comments.
 
+typedef void (*command)(char* args[], int validArgs);
+
 
 // cmdStruct type:
 // Associates a command name with a command handling function
