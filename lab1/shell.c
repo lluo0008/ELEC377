@@ -128,7 +128,12 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
    // the functions skipChar and strchr. You may use fprintf to report
    // errors that are encountered to stderr.
 
+
     int i ;
+
+
+   int i ;
+
    char* newBuffer = commandBuffer;
    
 
@@ -144,6 +149,9 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
         }
 
         //assign pointer to beginning of word into array
+
+        //assign pointer to beginning of word into array.
+
         args[i] = newBuffer;
         
         //look for space wich signifies end of word
