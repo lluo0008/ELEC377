@@ -313,9 +313,35 @@ void exitFunc(char *args[], int nargs)
 
 void cdFunc(char *args[], int nargs)
 {
+	//value to check if the directory was changed succesfully
+	int  chDirVal=0;
+	
+	//if no directory is specified
 	if (nargs == 1){
+		struct passwd *pw = getpwuid(getuid());
 		
+		//checks to see if pw is null
+		if (pw == NULL){
+			fprintf(stderr, "Error: passwd struct is null");
+		}
+		
+		//change to home directory
+		else{
+			 chDirVal = chdir(pw->pwd_dir);
+		}
 	}
+	//directory specified
+	else if(nargs ==2){
+		chDirVal = chdir(args[1])
+
+	}
+
+	if(chDirVal != 0){
+		fprintf(stderr, "Error: Directory does not exist")
+	}
+
+
+
 }
 
 void lsFunc(char *args[], int nargs)
