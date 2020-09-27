@@ -52,11 +52,11 @@ int main() {
 	// TODO Step 2: call splitCommandLine with the right parameters
 	
 	// Debugging for step 2
-	//printf("%d\n", nargs);
-	//int i;
-	//for (i = 0; i < nargs; i++){
-	//  printf("%d: %s\n",i,args[i]);
-	//}
+	printf("%d\n", nargs);
+	int i;
+	for (i = 0; i < nargs; i++){
+	 printf("%d: %s\n",i,args[i]);
+	}
 
 	// Execute the command
 	// Remember to check if there is a command (i.e. value of nargs)
@@ -127,11 +127,6 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
    // TODO Step 2 split the command into words using only
    // the functions skipChar and strchr. You may use fprintf to report
    // errors that are encountered to stderr.
-
-
-    int i ;
-
-
    int i ;
 
    char* newBuffer = commandBuffer;
