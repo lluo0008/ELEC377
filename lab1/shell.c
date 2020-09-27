@@ -33,7 +33,7 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs);
 void doCommand(char * args[], int nargs);
 
 int main() {
-
+	printf("test");
     char commandBuffer[CMD_BUFFSIZE];
     char *args[MAXARGS];
 
@@ -364,7 +364,8 @@ void lsFunc(char *args[], int nargs)
 	int i;
 	for (i = 0; i < numEnts, i++)
 	{
-		printf(namelist[i] -> d_name + "\n");
+		printf(namelist[i] -> d_name);
+		printf("\n");
 	}
 }
 
