@@ -50,7 +50,7 @@ int main() {
 
 	// Split command line into words.
 	// TODO Step 2: call splitCommandLine with the right parameters
-
+	
 	// Debugging for step 2
 	//printf("%d\n", nargs);
 	//int i;
