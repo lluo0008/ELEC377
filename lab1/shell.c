@@ -143,7 +143,7 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
         	break;
         }
 
-        //assign pointer to beginning of word into array
+        //assign pointer to beginning of word into array.
         args[i] = newBuffer;
         
         //look for space wich signifies end of word
