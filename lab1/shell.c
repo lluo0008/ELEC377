@@ -350,13 +350,21 @@ void lsFunc(char *args[], int nargs)
 
 	int filterFunc(const struct dirent *d);
 
-	if (nargs == 2 || strcmp(args[1], "-a") == 0)
+	//this compares in the case that there is a second argument, and the second argument is "-a", then it will print all files including hidden ones.
+	if (nargs == 2 && strcmp(args[1], "-a") == 0)
 	{
 		int numEnts = scandir(".", &namelist, NULL, NULL);
 	}
 
-	else int numEnts = scandir(".", &namelist, filterFunc, NULL);
+	//this compares if there is only 1 argument, and that being the ls, then it will not print the hidden files by using the filter.
+	else if (nargs == 1)
+	{
+		int numEnts = scandir(".", &namelist, filterFunc, NULL);
+	}
 
+	else fprintf(stderr, "Error: invalid second argument");
+
+	//for loop loops through the namelist which contains all the file names and prints them.
 	int i;
 	for (i = 0; i < numEnts, i++)
 	{
