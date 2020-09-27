@@ -313,7 +313,9 @@ void exitFunc(char *args[], int nargs)
 
 void cdFunc(char *args[], int nargs)
 {
-	
+	if (nargs == 1){
+		
+	}
 }
 
 void lsFunc(char *args[], int nargs)
@@ -324,4 +326,6 @@ void lsFunc(char *args[], int nargs)
 void pwdFunc(char *args[], int nargs)
 {
 	char *cwd = getcwd(NULL, 0);
+	printf(cwd);
+	free;
 }
