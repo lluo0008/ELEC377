@@ -88,23 +88,6 @@ int main() {
 char * skipChar(char * charPtr, char skip){
  // TODO Step 2: skip over instances of the char skip
  //    return input value of charPtr if *char is null char
-
-
-	//if null character is passed, return original string    
-	if (skip== '\0')
-		return (charPtr);
-	else{
-	    
-	    //loop through string until skip character is found
-		for (int i =0; charPtr[i] != '\0'; i++) {
-	    	if(charPtr[i] != skip)
-	       		break;  
-		}
-    }
-
-    
-	return &charPtr[i];
-	
 }
 
 //+
@@ -128,41 +111,6 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
    // TODO Step 2 split the command into words using only
    // the functions skipChar and strchr. You may use fprintf to report
    // errors that are encountered to stderr.
-   int i ;
-   char* newBuffer = commandBuffer;
-   
-
-   for(i = 0; i<maxargs;i++){
-        
-        //Jump to beginning of the next word 
-        newBuffer = skipChar(commandBuffer, ' ');
-
-        // if end of string is reached, break loop
-        if (newBuffer[0] == '\0'){
-        	i--;
-        	break;
-        }
-
-        //assign pointer to beginning of word into array
-        args[i] = newBuffer;
-        
-        //look for space wich signifies end of word
-        newBuffer = strchr(commandBuffer, ' ');
-
-        //if NULL is returned, it means we are at the end of the string
-        if(newBuffer == NULL){
-        	break;
-        }
-
-        //place null character to seperate words
-        newBuffer[0] = '\0';    
-        newBuffer++;
-
-   } 
-
-   return i+1;
-
-
 }
 
 
@@ -195,6 +143,8 @@ typedef struct {
 // prototypes for command handling functions
 // TODO STEP 4b,6: add a function prototype
 // for each command handling function
+
+char *cwd = getcwd(NULL, 0);
 
 // Array that provides the list commands and functions
 // must be terminated by {NULL, NULL} 
