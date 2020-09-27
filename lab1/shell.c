@@ -320,7 +320,22 @@ void cdFunc(char *args[], int nargs)
 
 void lsFunc(char *args[], int nargs)
 {
-	
+	struct dirent ** namelist;
+
+	int filterFunc(const struct dirent *d);
+
+	if (secondParam)
+	{
+		int numEnts = scandir(".", &namelist, NULL, NULL);
+	}
+
+	else int numEnts = scandir(".", &namelist, filterFunc, NULL);
+
+	int i;
+	for (i = 0; i < numEnts, i++)
+	{
+		printf(namelist[i] -> d_name + "\n");
+	}
 }
 
 void pwdFunc(char *args[], int nargs)
@@ -329,3 +344,4 @@ void pwdFunc(char *args[], int nargs)
 	printf(cwd);
 	free;
 }
+
