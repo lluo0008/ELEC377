@@ -46,13 +46,8 @@ int main() {
     while(fgets(commandBuffer,CMD_BUFFSIZE,stdin) != NULL){
 	// Remove newline at end of buffer
 	// TODO Step 2: remove newline from end of buffer
-<<<<<<< HEAD
-	
-=======
 
 	commandBuffer[strlen(commandBuffer) - 1] = '\0';
-
->>>>>>> 1ee1974e6c4a266defb7183a1a0d10d5af0eb5fe
 	// Split command line into words.
 	// TODO Step 2: call splitCommandLine with the right parameters
 	
