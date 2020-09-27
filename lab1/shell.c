@@ -203,7 +203,11 @@ typedef struct {
 // TODO STEP 4b,6: add a function prototype
 // for each command handling function
 
-char *cwd = getcwd(NULL, 0);
+
+void exitFunc(char *args[], int nargs);
+void cdFunc(char *args[], int nargs);
+void lsFunc(char *args[], int nargs);
+void pwdFunc(char *args[], int nargs);
 
 // Array that provides the list commands and functions
 // must be terminated by {NULL, NULL} 
@@ -319,5 +323,5 @@ void lsFunc(char *args[], int nargs)
 
 void pwdFunc(char *args[], int nargs)
 {
-	
+	char *cwd = getcwd(NULL, 0);
 }
