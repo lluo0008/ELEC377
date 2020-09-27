@@ -350,7 +350,7 @@ void lsFunc(char *args[], int nargs)
 
 	int filterFunc(const struct dirent *d);
 
-	if (secondParam)
+	if (nargs == 2 || strcmp(args[1], "-a") == 0)
 	{
 		int numEnts = scandir(".", &namelist, NULL, NULL);
 	}
