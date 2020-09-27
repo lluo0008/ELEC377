@@ -90,14 +90,14 @@ int main() {
 char * skipChar(char * charPtr, char skip){
  // TODO Step 2: skip over instances of the char skip
  //    return input value of charPtr if *char is null char
-
+    int i;
 	//if null character is passed, return original string    
 	if (skip== '\0')
 		return (charPtr);
 	else{
 	    
 	    //loop through string until skip character is found
-		for (int i =0; charPtr[i] != '\0'; i++) {
+		for (i =0; charPtr[i] != '\0'; i++) {
 	    	if(charPtr[i] != skip)
 	       		break;  
 		}
@@ -243,26 +243,26 @@ void doCommand(char * args[], int nargs){
 	int i = 0;
 	for (i = 0; i < nargs; i++)
 	{
-		if (strcmp(*args[i],args[0]))
+		if (strcmp(args[i],args[0]))
 		{
-			if (strcmp(*args[i], "exit") == 0)
+			if (strcmp(args[i], "exit") == 0)
 			{
-				exitFunc();
+				exitFunc(args, nargs);
 			}
 
-			if (strcmp(*args[i], "cd") == 0)
+			if (strcmp(args[i], "cd") == 0)
 			{
-				cdFunc();
+				cdFunc(args, nargs);
 			}
 
-			if (strcmp(*args[i], "ls") == 0)
+			if (strcmp(args[i], "ls") == 0)
 			{
-				lsFunc();
+				lsFunc(args, nargs);
 			}
 
-			if (strcmp(*args[i], "pwd") == 0)
+			if (strcmp(args[i], "pwd") == 0)
 			{
-				pwdFunc();
+				pwdFunc(args, nargs);
 			}
 
 		}
@@ -324,17 +324,17 @@ void cdFunc(char *args[], int nargs)
 		
 		//change to home directory
 		else{
-			 chDirVal = chdir(pw->pwd_dir);
+			 chDirVal = chdir(pw->pw_dir);
 		}
 	}
 	//directory specified
 	else if(nargs ==2){
-		chDirVal = chdir(args[1])
+		chDirVal = chdir(args[1]);
 
 	}
 
 	if(chDirVal != 0){
-		fprintf(stderr, "Error: Directory does not exist")
+		fprintf(stderr, "Error: Directory does not exist");
 	}
 
 
@@ -343,6 +343,7 @@ void cdFunc(char *args[], int nargs)
 
 void lsFunc(char *args[], int nargs)
 {
+    int numEnts;
 	struct dirent ** namelist;
 
 	int filterFunc(const struct dirent *d);
@@ -350,22 +351,23 @@ void lsFunc(char *args[], int nargs)
 	//this compares in the case that there is a second argument, and the second argument is "-a", then it will print all files including hidden ones.
 	if (nargs == 2 && strcmp(args[1], "-a") == 0)
 	{
-		int numEnts = scandir(".", &namelist, NULL, NULL);
+		numEnts = scandir(".", &namelist, NULL, NULL);
 	}
 
 	//this compares if there is only 1 argument, and that being the ls, then it will not print the hidden files by using the filter.
 	else if (nargs == 1)
 	{
-		int numEnts = scandir(".", &namelist, filterFunc, NULL);
+		numEnts = scandir(".", &namelist, filterFunc, NULL);
 	}
 
 	else fprintf(stderr, "Error: invalid second argument");
 
 	//for loop loops through the namelist which contains all the file names and prints them.
 	int i;
-	for (i = 0; i < numEnts, i++)
+	for (i = 0; i < numEnts; i++)
 	{
-		printf(namelist[i] -> d_name + "\n");
+		printf(namelist[i]->d_name);
+		printf("\n");
 	}
 }
 
@@ -375,4 +377,3 @@ void pwdFunc(char *args[], int nargs)
 	printf(cwd);
 	free;
 }
-
