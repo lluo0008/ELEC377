@@ -44,9 +44,10 @@ int main() {
     fflush(stdout);
 
     while(fgets(commandBuffer,CMD_BUFFSIZE,stdin) != NULL){
-
 	// Remove newline at end of buffer
 	// TODO Step 2: remove newline from end of buffer
+
+	commandBuffer[strlen(commandBuffer) - 1] = '\0';
 
 	// Split command line into words.
 	// TODO Step 2: call splitCommandLine with the right parameters
@@ -62,7 +63,7 @@ int main() {
 	// Execute the command
 	// Remember to check if there is a command (i.e. value of nargs)
 	// TODO: Step 3 call doCommand with the right arguments
-	doCommand(param1, param2);
+	doCommand(args, nargs);
 	// print prompt
 	printf("%%> ");
 	fflush(stdout);
