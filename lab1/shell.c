@@ -33,7 +33,6 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs);
 void doCommand(char * args[], int nargs);
 
 int main() {
-	printf("test");
     char commandBuffer[CMD_BUFFSIZE];
     char *args[MAXARGS];
 
@@ -365,9 +364,9 @@ void lsFunc(char *args[], int nargs)
 
 	//for loop loops through the namelist which contains all the file names and prints them.
 	int i;
-	for (i = 0; i < numEnts - 1; i++)
+	for (i = 0; i < numEnts; i++)
 	{
-		printf("%s\n", namelist[i]->d_name);
+		printf("%s%s\n", getcwd(NULL, 0), namelist[i]->d_name);
 		free(namelist[i]);
 	}
 	free(namelist);
