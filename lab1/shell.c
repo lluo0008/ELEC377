@@ -374,6 +374,6 @@ void lsFunc(char *args[], int nargs)
 void pwdFunc(char *args[], int nargs)
 {
 	char *cwd = getcwd(NULL, 0);
-	printf(cwd);
+	printf("%s", cwd);
 	free(cwd);
 }
