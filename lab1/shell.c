@@ -177,7 +177,7 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
 // See the description of the function prototypes at the bottom of
 // the file in the comments.
 
-typedef void (*command)(char* args[], int validArgs);
+typedef void (*command)(char* args[], int nargs);
 
 
 // cmdStruct type:
@@ -240,8 +240,9 @@ void doCommand(char * args[], int nargs){
    // TODO Step 5 this function is small
    //  this is the command search loop
 	int i = 0;
-	for (i = 0; i < nargs; i++)
+	for (i = 0; i < 4; i++)
 	{
+<<<<<<< HEAD
 		// if (strcmp(commandArray[i].cmdName, args[0]))
 		// {
 			if (strcmp(args[i], "exit") == 0)
@@ -260,17 +261,33 @@ void doCommand(char * args[], int nargs){
 				lsFunc(args, nargs);
 				return;
 			}
-
-			else if (strcmp(args[i], "pwd") == 0)
+=======
+		
+			if (strcmp(args[0], commandArray[i].cmdName) == 0)
 			{
-				pwdFunc(args, nargs);
+				(commandArray[i]->cmd(args, nargs));
+				return;
 			}
 
+>>>>>>> f569d194094538052329fe916df15dd7e9737452
+
+		
+		    else if (args[0] == NULL) {
+					break;
+					return;
+			}
+			
+
+<<<<<<< HEAD
 		//}
 		    else if (args[i] == NULL) break;
 
 			else fprintf(stderr, "Error: command not recognized");
+=======
+		
+>>>>>>> f569d194094538052329fe916df15dd7e9737452
 	}
+	fprintf(stderr, "Error: command not recognized");
 }
 
 //////////////////////////////////////////////////
