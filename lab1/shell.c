@@ -246,7 +246,7 @@ void doCommand(char * args[], int nargs){
 		// {
 			if (strcmp(args[i], "exit") == 0)
 			{
-				exit(args, nargs);
+				exitFunc(args, nargs);
 			}
 
 			else if (strcmp(args[i], "cd") == 0)
@@ -262,9 +262,8 @@ void doCommand(char * args[], int nargs){
 			}
 
 		
-		    else if (args[0] == NULL) {
-					break;
-					return;
+		    else if (args[i] == NULL) {
+				break;
 			}
 			
 
