@@ -204,6 +204,7 @@ void exitFunc(char *args[], int nargs);
 void cdFunc(char *args[], int nargs);
 void lsFunc(char *args[], int nargs);
 void pwdFunc(char *args[], int nargs);
+int dotCheck(const struct dirent *d);
 
 // Array that provides the list commands and functions
 // must be terminated by {NULL, NULL} 
@@ -345,7 +346,7 @@ void lsFunc(char *args[], int nargs)
     int numEnts;
 	struct dirent ** namelist;
 
-	int filterFunc(const struct dirent *d);
+	
 
 	//this compares in the case that there is a second argument, and the second argument is "-a", then it will print all files including hidden ones.
 	if (nargs == 2 && strcmp(args[1], "-a") == 0)
@@ -356,7 +357,7 @@ void lsFunc(char *args[], int nargs)
 	//this compares if there is only 1 argument, and that being the ls, then it will not print the hidden files by using the filter.
 	else if (nargs == 1)
 	{
-		numEnts = scandir(".", &namelist, filterFunc, NULL);
+		numEnts = scandir(".", &namelist, dotCheck(*namelist), NULL);
 	}
 
 	else fprintf(stderr, "Error: invalid second argument");
@@ -376,4 +377,9 @@ void pwdFunc(char *args[], int nargs)
 	char *cwd = getcwd(NULL, 0);
 	printf(cwd);
 	free(cwd);
+}
+
+int dotCheck(char *names)
+{
+	if (names[])
 }
