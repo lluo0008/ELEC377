@@ -243,8 +243,8 @@ void doCommand(char * args[], int nargs){
 	int i = 0;
 	for (i = 0; i < nargs; i++)
 	{
-		if (strcmp(args[i],args[0]))
-		{
+		// if (strcmp(args[i],args[0]))
+		// {
 			if (strcmp(args[i], "exit") == 0)
 			{
 				exitFunc(args, nargs);
@@ -265,8 +265,8 @@ void doCommand(char * args[], int nargs){
 				pwdFunc(args, nargs);
 			}
 
-		}
-		else if (args[i] == NULL) break;
+		// }
+		// else if (args[i] == NULL) break;
 
 		else fprintf(stderr, "Error: command not recognized");
 	}
