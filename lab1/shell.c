@@ -378,8 +378,8 @@ void lsFunc(char *args[], int nargs)
 		{
 			continue;
 		}
-		printf("%s%s\n", getcwd(NULL, 0), namelist[i]->d_name);
-		free(namelist[i]);
+		printf("%s%s\n", getcwd(NULL, 0), namelist[j]->d_name);
+		free(namelist[j]);
 	}
 
 	free(namelist);
