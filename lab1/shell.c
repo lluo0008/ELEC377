@@ -251,10 +251,15 @@ void doCommand(char * args[], int nargs){
 
 
 		
-		    else if (args[0] == NULL) break;
+		    else if (args[0] == NULL) {
+					break;
+					return;
+			}
+			
 
-		fprintf(stderr, "Error: command not recognized");
+		
 	}
+	fprintf(stderr, "Error: command not recognized");
 }
 
 //////////////////////////////////////////////////
