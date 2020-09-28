@@ -246,12 +246,12 @@ void doCommand(char * args[], int nargs){
 		// {
 			if (strcmp(args[i], "exit") == 0)
 			{
-				exitFunc(args, nargs);
+				commandArray[0];
 			}
 
 			else if (strcmp(args[i], "cd") == 0)
 			{
-				cdFunc(args, nargs);
+				commandArray[1];
 				break; //put break here and in ls so that the program doesn't freak out when it detects a second argument
 			}
 
