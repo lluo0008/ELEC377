@@ -365,14 +365,15 @@ void lsFunc(char *args[], int nargs)
 	int i;
 	for (i = 0; i < numEnts; i++)
 	{
-		printf(namelist[i]->d_name);
-		printf("\n");
+		printf("%s\n", namelist[i]->d_name);
+		free(namelist[i]);
 	}
+	free(namelist);
 }
 
 void pwdFunc(char *args[], int nargs)
 {
 	char *cwd = getcwd(NULL, 0);
 	printf(cwd);
-	free;
+	free(cwd);
 }
