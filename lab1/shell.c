@@ -177,7 +177,7 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
 // See the description of the function prototypes at the bottom of
 // the file in the comments.
 
-typedef void (*command)(char* args[], int validArgs);
+typedef void (*command)(char* args[], int nargs);
 
 
 // cmdStruct type:
@@ -245,7 +245,7 @@ void doCommand(char * args[], int nargs){
 		
 			if (strcmp(args[0], commandArray[i].cmdName) == 0)
 			{
-				commandArray[i]->cmd(args, nargs);
+				(commandArray[i]->cmd(args, nargs));
 				return;
 			}
 
