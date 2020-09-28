@@ -345,7 +345,7 @@ void cdFunc(char *args[], int nargs)
 void lsFunc(char *args[], int nargs)
 {
     int numEnts;
-	struct dirent * namelist;
+	const struct dirent ** namelist;
 
 	//this compares in the case that there is a second argument, and the second argument is "-a", then it will print all files including hidden ones.
 	if (nargs == 2 && strcmp(args[1], "-a") == 0)
