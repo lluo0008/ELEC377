@@ -91,7 +91,7 @@ char * skipChar(char * charPtr, char skip){
  //    return input value of charPtr if *char is null char
     int i;
 	//if null character is passed, return original string    
-	if (skip== '\0')
+	if (skip== '\0' || charPtr[0]!= skip)
 		return (charPtr);
 	else{
 	    
@@ -151,7 +151,7 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
         args[i] = newBuffer;
         
         //look for space wich signifies end of word
-        newBuffer = strchr(commandBuffer, ' ');
+        newBuffer = strchr(newWord, ' ');
 
         //if NULL is returned, it means we are at the end of the string
         if(newBuffer == NULL){
