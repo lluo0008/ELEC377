@@ -33,7 +33,7 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs);
 void doCommand(char * args[], int nargs);
 
 int main() {
-
+	printf("test");
     char commandBuffer[CMD_BUFFSIZE];
     char *args[MAXARGS];
 
@@ -48,12 +48,11 @@ int main() {
 	// TODO Step 2: remove newline from end of buffer
 
 	commandBuffer[strlen(commandBuffer) - 1] = '\0';
-
 	// Split command line into words.
 	// TODO Step 2: call splitCommandLine with the right parameters
 	
 	// Debugging for step 2
-	 int nargs = splitCommandLine(commandBuffer, args, MAXARGS);
+	int nargs = splitCommandLine(commandBuffer, args, MAXARGS);
 	printf("%d\n", nargs);
 	int i;
 	for (i = 0; i < nargs; i++){
