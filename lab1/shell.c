@@ -356,7 +356,7 @@ void lsFunc(char *args[], int nargs)
 	//this compares if there is only 1 argument, and that being the ls, then it will not print the hidden files by using the filter.
 	else if (nargs == 1)
 	{
-		numEnts = scandir(args[1], &namelist, NULL, NULL);
+		numEnts = scandir(args[1], &namelist, dotCheck, NULL);
 	}
 
 	else fprintf(stderr, "Error: invalid second argument");
@@ -382,10 +382,10 @@ int dotCheck(const struct dirent *d)
 {
 	//this checks if the first file in the directory contains a '.'
 	if (d->d_name[0] == '.'){
-		return 0;
+		return FALSE;
 	}
 	else{
-		return 1;
+		return TRUE;
 	}
 	
 }
