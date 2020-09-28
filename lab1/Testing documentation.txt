@@ -1,0 +1,124 @@
+THIS IS THE SPLIT COMMAND LINE TESTING DOC
+
+
+Script started on Mon 28 Sep 2020 02:29:23 AM EDT
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ shell
+%> test             (one word, shows only 1 word)
+1
+0: test
+%> test 1 test       1 test2 test3        (3 words, shows 3 separate words)
+3
+0: test1
+1: test2
+2: test3
+%> 1 2 3 4 5 6                       (6 numbers separated by spacesm shows as 6 separate numbers)
+6
+0: 1
+1: 2
+2: 3
+3: 4
+4: 5
+5: 6
+%> 1   3 2   4                    (4 numbers separated by random amount of spaces, still only shows up as 4 separate numbers)
+4
+0: 1
+1: 3
+2: 2
+3: 4
+%>     1 2 3     4              (more random space testing)
+4
+0: 1
+1: 2
+2: 3
+3: 4
+%>
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ exit
+Script done on Mon 28 Sep 2020 02:30:01 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THIS IS THE SHELL TESTING DOC
+
+Script started on Mon 28 Sep 2020 02:42:57 AM EDT
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ shell
+%> pwd
+/home/student/ELEC377-Group-68/lab1%>     (now it is in lab1 directory)
+%> cd                                     (cd command changes to home directory)
+%> pwd
+/home/student%>                           (shows that it is in home directory)
+%> cd Elec   EC  LEC377-Group-68       (cd command changes back to group 68 directory)
+%> pwd
+/home/student/ELEC377-Group-68%>          (shows that it is in group 68 directory)
+%> ls                                     (ls command lists all the non-hidden files)
+/home/student/ELEC377-Group-68lab0
+/home/student/ELEC377-Group-68ssh
+/home/student/ELEC377-Group-68lab1
+/home/student/ELEC377-Group-68lab2
+%> ls -a                                  (ls -a command lists all the hidden and non-hidden files)
+/home/student/ELEC377-Group-68.
+/home/student/ELEC377-Group-68..
+/home/student/ELEC377-Group-68.git
+/home/student/ELEC377-Group-68lab0
+/home/student/ELEC377-Group-68ssh
+/home/student/ELEC377-Group-68lab1
+/home/student/ELEC377-Group-68.vscode
+/home/student/ELEC377-Group-68lab2
+%> this should be an error               (this is an invalid command)
+Error: command not recognized            (the above invalid command results in an error)
+%> w exit                             (exit command exits the shell)
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ ls
+#shell.c#  Makefile  shell  shell.c  shellTesting.txt  splitCommandLineTesting.txt
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ git p commit -a
+[1;48r[?25h[?8c[?25h[?0c[27m[24m[0m[H[J[?25l[?1c[48;1H"~/ELEC377-Group-68/.git/COMMIT_EDITMSG" 15L, 353C[2;1H[1m[36m# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#       modified:   shell
+#
+# Untracked files:
+#       ../lab0/#foo.c#
+#       ../lab0/lab0mod.o
+#       ../lab0/lab0user
+#       shellTesting.txt
+#[0m
+[1m[34m~                                                                                                                               [17;1H~                                                                                                                               [18;1H~                                                                                                                               [19;1H~                                                                                                                               [20;1H~                                                                                                                               [21;1H~                                                                                                                               [22;1H~                                                                                                                               [23;1H~                                                                                                                               [24;1H~                                                                                                                               [25;1H~                                                                                                                               [26;1H~                                                                                                                               [27;1H~                                                                                                                               [28;1H~                                                                                                                               [29;1H~                                                                                                                               [30;1H~                                                                                                                               [31;1H~                                                                                                                               [32;1H~                                                                                                                               [33;1H~                                                                                                                               [34;1H~                                                                                                                               [35;1H~                                                                                                                               [36;1H~                                                                                                                               [37;1H~                                                                                                                               [38;1H~                                                                                                                               [39;1H~                                                                                                                               [40;1H~                                                                                                                               [41;1H~                                                                                                                               [42;1H~                                                                                                                               [43;1H~                                                                                                                               [44;1H~                                                                                                                               [45;1H~                                                                                                                               [46;1H~                                                                                                                               [47;1H~                                                                                                                               [1;1H[?25h[?0c[?25l[?1c[0m[48;1H[1m-- INSERT --[0m[48;13H[K[1;1H[?25h[?0c[?25l[?1ch[?25h[?0c[?25l[?1ce[?25h[?0c[?25l[?1cl[?25h[?0c[?25l[?1cl[?25h[?0c[?25l[?1c[1;4H[K[1;4H[?25h[?0c[?25l[?1c[1;3H[K[1;3H[?25h[?0c[?25l[?1c[1;2H[K[1;2H[?25h[?0c[?25l[?1c[1;1H[K[1;1H[?25h[?0c[?25l[?1ca[?25h[?0c[?25l[?1cd[?25h[?0c[?25l[?1cd[?25h[?0c[?25l[?1ce[?25h[?0c[?25l[?1cd[?25h[?0c[?25l[?1c [?25h[?0c[?25l[?1cs[?25h[?0c[?25l[?1ch[?25h[?0c[?25l[?1ce[?25h[?0c[?25l[?1cl[?25h[?0c[?25l[?1cl[?25h[?0c[?25l[?1cT[?25h[?0c[?25l[?1ce[?25h[?0c[?25l[?1cs[?25h[?0c[?25l[?1ct[?25h[?0c[?25l[?1ci[?25h[?0c[?25l[?1cn[?25h[?0c[?25l[?1cg[?25h[?0c[?25l[?1c.[?25h[?0c[?25l[?1ct[?25h[?0c[?25l[?1cx[?25h[?0c[?25l[?1ct[?25h[?0c[?25l[?1c[1;22H[K[1;22H[?25h[?0c[?25l[?1c[1;21H[K[1;21H[?25h[?0c[?25l[?1c[1;20H[K[1;20H[?25h[?0c[?25l[?1c[1;19H[K[1;19H[?25h[?0c[?25l[?1c:[?25h[?0c[?25l[?1c[1;19H[K[1;19H[?25h[?0c[48;1H[K[1;18H[?25l[?1c[?25h[?0c[?25l[?1c[48;1H:[?25h[?0cw[?25l[?1c[?25h[?0cq[?25l[?1c[?25h[?0c
+[?25l[?1c".git/COMMIT_EDITMSG" 15L, 371C written
+[?25h[?0c
+
+[master 7d57dce] added shellTesting
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ git push
+Enter passphrase for key '/home/student/.ssh/id_rsa':
+Counting objects: 4, done.
+Compressing objects:  25% (1/4)
+Compressing objects:  50% (2/4)
+Compressing objects:  75% (3/4)
+Compressing objects: 100% (4/4)
+Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)
+Writing objects:  50% (2/4)
+Writing objects:  75% (3/4)
+Writing objects: 100% (4/4)
+Writing objects: 100% (4/4), 2.46 KiB | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+To code.engineering.queensu.ca:ELEC377/ELEC377-Group-68.git
+   c43d4c5..7d57dce  master -> master
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ git pyu  ull
+Enter passphrase for key '/home/student/.ssh/id_rsa':
+remote: Enumerating objects: 13, done.[K
+remote: Counting objects:   8% (1/12)[K
+remote: Counting objects:  16% (2/12)[K
+remote
