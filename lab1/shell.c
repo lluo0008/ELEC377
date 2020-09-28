@@ -240,36 +240,20 @@ void doCommand(char * args[], int nargs){
    // TODO Step 5 this function is small
    //  this is the command search loop
 	int i = 0;
-	for (i = 0; i < nargs; i++)
+	for (i = 0; i < 4; i++)
 	{
-		if (strcmp(commandArray[i].cmdName, args[0]))
-		{
+		
 			if (strcmp(args[0], commandArray[i].cmdName) == 0)
 			{
-				commandArray[0].cmd;
+				commandArray[i].cmd;
+				return;
 			}
 
-			else if (strcmp(args[0], commandArray[i].cmdName) == 0)
-			{
-				commandArray[1].cmd;
-				break; //put break here and in ls so that the program doesn't freak out when it detects a second argument
-			}
 
-			else if (strcmp(args[i], "ls") == 0)
-			{
-				lsFunc(args, nargs);
-				break;
-			}
+		
+		    else if (args[0] == NULL) break;
 
-			else if (strcmp(args[i], "pwd") == 0)
-			{
-				pwdFunc(args, nargs);
-			}
-
-		}
-		    else if (args[i] == NULL) break;
-
-		else fprintf(stderr, "Error: command not recognized");
+		fprintf(stderr, "Error: command not recognized");
 	}
 }
 
