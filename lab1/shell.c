@@ -250,23 +250,23 @@ void doCommand(char * args[], int nargs){
 				exitFunc(args, nargs);
 			}
 
-			if (strcmp(args[i], "cd") == 0)
+			else if (strcmp(args[i], "cd") == 0)
 			{
 				cdFunc(args, nargs);
 			}
 
-			if (strcmp(args[i], "ls") == 0)
+			else if (strcmp(args[i], "ls") == 0)
 			{
 				lsFunc(args, nargs);
 			}
 
-			if (strcmp(args[i], "pwd") == 0)
+			else if (strcmp(args[i], "pwd") == 0)
 			{
 				pwdFunc(args, nargs);
 			}
 
 		// }
-		// else if (args[i] == NULL) break;
+		    else if (args[i] == NULL) break;
 
 		else fprintf(stderr, "Error: command not recognized");
 	}
