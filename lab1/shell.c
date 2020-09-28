@@ -240,7 +240,7 @@ void doCommand(char * args[], int nargs){
    // TODO Step 5 this function is small
    //  this is the command search loop
 	int i = 0;
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < nargs; i++)
 	{
 		// if (strcmp(commandArray[i].cmdName, args[0]))
 		// {
@@ -261,9 +261,9 @@ void doCommand(char * args[], int nargs){
 				return;
 			}
 
-		
-		    else if (args[i] == NULL) {
-				break;
+			else if (strcmp(args[i], "pwd") == 0)
+			{
+				pwdFunc(args, nargs);
 			}
 			
 
@@ -272,7 +272,6 @@ void doCommand(char * args[], int nargs){
 
 			else fprintf(stderr, "Error: command not recognized");
 	}
-	fprintf(stderr, "Error: command not recognized");
 }
 
 //////////////////////////////////////////////////
