@@ -214,10 +214,10 @@ int dotCheck(const struct dirent *d);
 // of strings and command handling funciton names
 
 commandStruct commandArray[] = {
-	{"exit", exitFunc()},
-	{"cd", cdFunc()},
-	{"ls", lsFunc()},
-	{"pwd", pwdFunc()},
+	{"exit", exitFunc},
+	{"cd", cdFunc},
+	{"ls", lsFunc},
+	{"pwd", pwdFunc},
 	{NULL, NULL}
 };
 
@@ -245,7 +245,7 @@ void doCommand(char * args[], int nargs){
 		
 			if (strcmp(args[0], commandArray[i].cmdName) == 0)
 			{
-				commandArray[i].cmd(args, nargs);
+				commandArray[i]->cmd(args, nargs);
 				return;
 			}
 
