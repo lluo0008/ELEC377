@@ -379,7 +379,7 @@ void pwdFunc(char *args[], int nargs)
 	free(cwd);
 }
 
-int *dotCheck(const struct dirent *d)
+int dotCheck(const struct dirent *d)
 {
 	//this checks if the first file in the directory contains a '.'
 	if (d->d_name[0] == '.'){
