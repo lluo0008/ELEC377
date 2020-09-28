@@ -151,7 +151,7 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
         args[i] = newBuffer;
         
         //look for space wich signifies end of word
-        newBuffer = strchr(newWord, ' ');
+        newBuffer = strchr(newBuffer, ' ');
 
         //if NULL is returned, it means we are at the end of the string
         if(newBuffer == NULL){
