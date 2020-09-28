@@ -365,7 +365,7 @@ void lsFunc(char *args[], int nargs)
 
 	//for loop loops through the namelist which contains all the file names and prints them.
 	int i;
-	for (i = 0; i < numEnts; i++)
+	for (i = 0; i < numEnts - 1; i++)
 	{
 		printf("%s\n", namelist[i]->d_name);
 		free(namelist[i]);
