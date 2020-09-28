@@ -374,7 +374,7 @@ void lsFunc(char *args[], int nargs)
 	int j;
 	for (j = 0; j < numEnts2; j++)
 	{
-		if (strcmp(namelist[i]->d_name, '.') == 0)
+		if (namelist[j]->d_name[0] == '.')
 		{
 			continue;
 		}
@@ -395,7 +395,7 @@ void pwdFunc(char *args[], int nargs)
 int dotCheck(const struct dirent *d)
 {
 	//this checks if the first file in the directory contains a '.'
-	if (strcmp(d->d_name, '.') == 0){
+	if (strcmp(d->d_name[0], '.') == 0){
 		return 0;
 	}
 	else{
