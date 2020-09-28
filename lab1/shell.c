@@ -252,12 +252,13 @@ void doCommand(char * args[], int nargs){
 			else if (strcmp(args[i], "cd") == 0)
 			{
 				cdFunc(args, nargs);
-				break;
+				break; //put break here and in ls so that the program doesn't freak out when it detects a second argument
 			}
 
 			else if (strcmp(args[i], "ls") == 0)
 			{
 				lsFunc(args, nargs);
+				break;
 			}
 
 			else if (strcmp(args[i], "pwd") == 0)
@@ -346,8 +347,6 @@ void lsFunc(char *args[], int nargs)
     int numEnts;
 	struct dirent ** namelist;
 
-	printf("test");
-
 	//this compares in the case that there is a second argument, and the second argument is "-a", then it will print all files including hidden ones.
 	if (nargs == 2 && strcmp(args[1], "-a") == 0)
 	{
@@ -357,7 +356,7 @@ void lsFunc(char *args[], int nargs)
 	//this compares if there is only 1 argument, and that being the ls, then it will not print the hidden files by using the filter.
 	else if (nargs == 1)
 	{
-		numEnts = scandir(".", &namelist, NULL, NULL);
+		numEnts = scandir(".", &namelist, dotCheck(*namelist), NULL);
 	}
 
 	else fprintf(stderr, "Error: invalid second argument");
