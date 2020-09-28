@@ -345,7 +345,8 @@ void cdFunc(char *args[], int nargs)
 
 void lsFunc(char *args[], int nargs)
 {
-    int numEnts;
+    int numEnts = 0;
+	int numEnts2 = 0;
 	struct dirent ** namelist;
 
 	//this compares in the case that there is a second argument, and the second argument is "-a", then it will print all files including hidden ones.
@@ -357,7 +358,7 @@ void lsFunc(char *args[], int nargs)
 	//this compares if there is only 1 argument, and that being the ls, then it will not print the hidden files by using the filter.
 	else if (nargs == 1)
 	{
-		numEnts = scandir(args[1], &namelist, dotCheck, NULL);
+		numEnts2 = scandir(".", &namelist, NULL, NULL);
 	}
 
 	else fprintf(stderr, "Error: invalid second argument");
@@ -369,6 +370,18 @@ void lsFunc(char *args[], int nargs)
 		printf("%s%s\n", getcwd(NULL, 0), namelist[i]->d_name);
 		free(namelist[i]);
 	}
+
+	int j;
+	for (j = 0; j < numEnts2; j++)
+	{
+		if (strcmp(namelist[i]->d_name, '.') == 0)
+		{
+			continue;
+		}
+		printf("%s%s\n", getcwd(NULL, 0), namelist[i]->d_name);
+		free(namelist[i]);
+	}
+
 	free(namelist);
 }
 
