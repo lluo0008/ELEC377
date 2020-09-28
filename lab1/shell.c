@@ -26,7 +26,7 @@
 #include <pwd.h>
 #include <ctype.h>
 
-#define CMD_BUFFSIZE 2048
+#define CMD_BUFFSIZE 1024
 #define MAXARGS 10
 
 int splitCommandLine(char * commandBuffer, char* args[], int maxargs);
