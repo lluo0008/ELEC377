@@ -242,23 +242,23 @@ void doCommand(char * args[], int nargs){
 	int i = 0;
 	for (i = 0; i < nargs; i++)
 	{
-		if (strcmp(commandArray[i].cmdName, args[0]))
-		{
-			if (strcmp(args[0], commandArray[i].cmdName) == 0)
+		// if (strcmp(commandArray[i].cmdName, args[0]))
+		// {
+			if (strcmp(args[i], "exit") == 0)
 			{
-				commandArray[0].cmd;
+				exit(args, nargs);
 			}
 
-			else if (strcmp(args[0], commandArray[i].cmdName) == 0)
+			else if (strcmp(args[i], "cd") == 0)
 			{
-				commandArray[1].cmd;
-				break; //put break here and in ls so that the program doesn't freak out when it detects a second argument
+				cdFunc(args, nargs);
+				return; //put break here and in ls so that the program doesn't freak out when it detects a second argument
 			}
 
 			else if (strcmp(args[i], "ls") == 0)
 			{
 				lsFunc(args, nargs);
-				break;
+				return;
 			}
 
 			else if (strcmp(args[i], "pwd") == 0)
@@ -266,10 +266,10 @@ void doCommand(char * args[], int nargs){
 				pwdFunc(args, nargs);
 			}
 
-		}
+		//}
 		    else if (args[i] == NULL) break;
 
-		else fprintf(stderr, "Error: command not recognized");
+			else fprintf(stderr, "Error: command not recognized");
 	}
 }
 
