@@ -270,7 +270,7 @@ void doCommand(char * args[], int nargs){
 		//}
 		    else if (args[i] == NULL) break;
 
-			else fprintf(stderr, "Error: command not recognized");
+			else fprintf(stderr, "Error: command not recognized\n");
 	}
 }
 
