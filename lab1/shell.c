@@ -241,8 +241,8 @@ void doCommand(char * args[], int nargs){
    // TODO Step 5 this function is small
    //  this is the command search loop
 	int i = 0;
-	for (i = 0; i < nargs; i++)
-	{
+	// for (i = 0; i < nargs; i++)
+	// {
 		// if (strcmp(args[i],args[0]))
 		// {
 			if (strcmp(args[i], "exit") == 0)
@@ -253,6 +253,7 @@ void doCommand(char * args[], int nargs){
 			else if (strcmp(args[i], "cd") == 0)
 			{
 				cdFunc(args, nargs);
+
 			}
 
 			else if (strcmp(args[i], "ls") == 0)
@@ -269,7 +270,7 @@ void doCommand(char * args[], int nargs){
 		    else if (args[i] == NULL) break;
 
 		else fprintf(stderr, "Error: command not recognized");
-	}
+	//}
 }
 
 //////////////////////////////////////////////////
