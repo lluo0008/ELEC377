@@ -242,7 +242,6 @@ void doCommand(char * args[], int nargs){
 	int i = 0;
 	for (i = 0; i < 4; i++)
 	{
-<<<<<<< HEAD
 		// if (strcmp(commandArray[i].cmdName, args[0]))
 		// {
 			if (strcmp(args[i], "exit") == 0)
@@ -261,15 +260,6 @@ void doCommand(char * args[], int nargs){
 				lsFunc(args, nargs);
 				return;
 			}
-=======
-		
-			if (strcmp(args[0], commandArray[i].cmdName) == 0)
-			{
-				(commandArray[i]->cmd(args, nargs));
-				return;
-			}
-
->>>>>>> f569d194094538052329fe916df15dd7e9737452
 
 		
 		    else if (args[0] == NULL) {
@@ -278,14 +268,10 @@ void doCommand(char * args[], int nargs){
 			}
 			
 
-<<<<<<< HEAD
 		//}
 		    else if (args[i] == NULL) break;
 
 			else fprintf(stderr, "Error: command not recognized");
-=======
-		
->>>>>>> f569d194094538052329fe916df15dd7e9737452
 	}
 	fprintf(stderr, "Error: command not recognized");
 }
