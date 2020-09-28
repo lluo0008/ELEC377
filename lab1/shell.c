@@ -381,5 +381,11 @@ void pwdFunc(char *args[], int nargs)
 
 int dotCheck(char *names)
 {
-	if (names[])
+	if (names->d_name[0] =='.' ){
+		return 0;
+	}
+	else{
+		return 1;
+	}
+	
 }
