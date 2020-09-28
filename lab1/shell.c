@@ -51,17 +51,17 @@ int main() {
 	// TODO Step 2: call splitCommandLine with the right parameters
 	
 	// Debugging for step 2
-	int nargs = splitCommandLine(commandBuffer, args, MAXARGS);
-	printf("%d\n", nargs);
-	int i;
-	for (i = 0; i < nargs; i++){
-	 printf("%d: %s\n",i,args[i]);
-	}
+	// int nargs = splitCommandLine(commandBuffer, args, MAXARGS);
+	// printf("%d\n", nargs);
+	// int i;
+	// for (i = 0; i < nargs; i++){
+	//  printf("%d: %s\n",i,args[i]);
+	// }
 
 	// Execute the command
 	// Remember to check if there is a command (i.e. value of nargs)
 	// TODO: Step 3 call doCommand with the right arguments
-	//doCommand(args, nargs);
+	doCommand(args, nargs);
 	// print prompt
 	printf("%%> ");
 	fflush(stdout);
