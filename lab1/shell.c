@@ -62,7 +62,7 @@ int main() {
 	// Execute the command
 	// Remember to check if there is a command (i.e. value of nargs)
 	// TODO: Step 3 call doCommand with the right arguments
-	doCommand(args, nargs);
+	//doCommand(args, nargs);
 	// print prompt
 	printf("%%> ");
 	fflush(stdout);
