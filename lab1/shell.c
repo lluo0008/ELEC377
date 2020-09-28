@@ -136,7 +136,7 @@ int splitCommandLine(char * commandBuffer, char* args[], int maxargs){
    for(i = 0; i<maxargs;i++){
         
         //Jump to beginning of the next word 
-        newBuffer = skipChar(commandBuffer, ' ');
+        newBuffer = skipChar(newBuffer, ' ');
 
         // if end of string is reached, break loop
         if (newBuffer[0] == '\0'){
