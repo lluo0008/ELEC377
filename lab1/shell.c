@@ -357,7 +357,7 @@ void lsFunc(char *args[], int nargs)
 	//this compares if there is only 1 argument, and that being the ls, then it will not print the hidden files by using the filter.
 	else if (nargs == 1)
 	{
-		numEnts = scandir(".", &namelist, dotCheck(*namelist), NULL);
+		numEnts = scandir(".", &namelist, dotCheck(**namelist), NULL);
 	}
 
 	else fprintf(stderr, "Error: invalid second argument");
