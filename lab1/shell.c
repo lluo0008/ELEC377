@@ -379,9 +379,9 @@ void pwdFunc(char *args[], int nargs)
 	free(cwd);
 }
 
-int dotCheck(char *names)
+int dotCheck(const struct dirent *d)
 {
-	if (names->d_name[0] =='.' ){
+	if (d->d_name[0] == '.'){
 		return 0;
 	}
 	else{
