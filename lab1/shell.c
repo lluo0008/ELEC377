@@ -244,12 +244,12 @@ void doCommand(char * args[], int nargs){
 	{
 		if (strcmp(commandArray[i],args[0]))
 		{
-			if (strcmp(args[i], commandArray[0]->cmdName) == 0)
+			if (strcmp(args[i], commandArray[0].cmdName) == 0)
 			{
 				commandArray[0].cmd;
 			}
 
-			else if (strcmp(args[i], commandArray[1]->cmdName) == 0)
+			else if (strcmp(args[i], commandArray[1].cmdName) == 0)
 			{
 				commandArray[1].cmd;
 				break; //put break here and in ls so that the program doesn't freak out when it detects a second argument
