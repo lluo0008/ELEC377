@@ -382,10 +382,10 @@ int dotCheck(const struct dirent *d)
 {
 	//this checks if the first file in the directory contains a '.'
 	if (d->d_name[0] == '.'){
-		return FALSE;
+		return (FALSE);
 	}
 	else{
-		return TRUE;
+		return (TRUE);
 	}
 	
 }
