@@ -214,10 +214,10 @@ int dotCheck(const struct dirent *d);
 // of strings and command handling funciton names
 
 commandStruct commandArray[] = {
-	{"exit", exitFunc},
-	{"cd", cdFunc},
-	{"ls", lsFunc},
-	{"pwd", pwdFunc},
+	{"exit", exitFunc(args, nargs)},
+	{"cd", cdFunc(args, nargs)},
+	{"ls", lsFunc(args, nargs)},
+	{"pwd", pwdFunc(args, nargs)},
 	{NULL, NULL}
 };
 
