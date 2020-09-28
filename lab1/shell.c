@@ -345,7 +345,7 @@ void cdFunc(char *args[], int nargs)
 void lsFunc(char *args[], int nargs)
 {
     int numEnts;
-	struct dirent ** namelist;
+	struct dirent * namelist;
 
 	//this compares in the case that there is a second argument, and the second argument is "-a", then it will print all files including hidden ones.
 	if (nargs == 2 && strcmp(args[1], "-a") == 0)
@@ -380,7 +380,6 @@ void pwdFunc(char *args[], int nargs)
 
 int dotCheck(const struct dirent *d)
 {
-	exit(0);
 	//this checks if the first file in the directory contains a '.'
 	if (d->d_name[0] == '.'){
 		return 0;
