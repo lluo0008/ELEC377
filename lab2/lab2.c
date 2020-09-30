@@ -22,6 +22,8 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
 	    // find first task
         // write first task
         // advance to next task
+        numChars = sprintf(page, "Hello");
+        numChars += sprintf(page + numChars, "World\n");
     } else {
         //if (at back at begining of list){
             *eof = 0;
@@ -38,7 +40,11 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
 
 int init_module(){
    struct proc_dir_entry * proc_entry;
+   proc_entry = create_proc_entry("lab2", 0444, NULL);
+   proc_entry->read_proc = my_read_proc();
+   return 0;
 }
 
 void cleanup_module(){
+    remove_proc_entry("lab2", NULL);
 }
