@@ -18,8 +18,14 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
 
     int numChars;
     if (fpos == 0){
-	     // write headers
+	    // write headers
+        numChars += sprintf(page, "Number of processes currently running: %d\n", nr_running)
 	    // find first task
+        &init_task = theTask;
+        while (theTask -> pid == 0)
+        {
+            
+        }
         // write first task
         // advance to next task
         numChars = sprintf(page, "Hello");
