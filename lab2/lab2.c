@@ -19,17 +19,23 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
     int numChars;
     if (fpos == 0){
 	    // write headers
-        numChars += sprintf(page, "Number of processes currently running: %d\n", nr_running)
+        numChars += sprintf(page, "PID\t");
+        numChars += sprintf(page, "UID\t");
+        numChars += sprintf(page, "VSZ\t");
+        numChars += sprintf(page, "RSS\t");
 	    // find first task
-        &init_task = theTask;
+        theTask = &init_task;
         while (theTask -> pid == 0)
         {
-            
+            theTask = theTask -> nextTask;
         }
         // write first task
+        firstTask = theTask;
+        numChars += sprintf(page, "%d\t%d", theTask -> pid, theTask -> uid);
         // advance to next task
-       // numChars = sprintf(page, "Hello");
-       // numChars += sprintf(page + numChars, "World\n");
+        theTask = theTask -> nextTask;
+        // numChars = sprintf(page, "Hello");
+        // numChars += sprintf(page + numChars, "World\n");
     } else {
         //if (at back at begining of list){
             *eof = 0;
