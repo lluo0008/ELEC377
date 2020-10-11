@@ -22,7 +22,7 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
         numChars += sprintf(page, "PID\t");
         numChars += sprintf(page + numChars, "UID\t");
         numChars += sprintf(page + numChars, "VSZ\t");
-        numChars += sprintf(page + numChars, "RSS\t");
+        numChars += sprintf(page + numChars, "RSS\n");
 	    // find first task
         theTask = &init_task;
         while (theTask -> pid == 0)
@@ -32,8 +32,26 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
         // write first task
         firstTask = theTask;
         numChars += sprintf(page + numChars, "%d\t%d", theTask -> pid, theTask -> uid);
+
+        
+        int pageSize = PAGE_SIZE >> 10;
+
+        if (mm == NULL)
+        {
+            numChars += sprintf(page + numChars, "0\t0");
+        }
+        else
+        {
+            numChars += sprintf(page + numChars, "%d\t%d", (mm->total_vm)*pageSize, (mm->rss)*pageSize); 
+        }
         // advance to next task
-        theTask = theTask -> next_task;
+        do
+        {
+            theTask = theTask -> next_task;
+        }
+        while (theTask -> pid == 0)
+
+
         // numChars = sprintf(page, "Hello");
         // numChars += sprintf(page + numChars, "World\n");
     } else {
