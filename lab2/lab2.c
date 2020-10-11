@@ -27,13 +27,13 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
         theTask = &init_task;
         while (theTask -> pid == 0)
         {
-            theTask = theTask -> nextTask;
+            theTask = theTask -> next_task;
         }
         // write first task
         firstTask = theTask;
         numChars += sprintf(page, "%d\t%d", theTask -> pid, theTask -> uid);
         // advance to next task
-        theTask = theTask -> nextTask;
+        theTask = theTask -> next_task;
         // numChars = sprintf(page, "Hello");
         // numChars += sprintf(page + numChars, "World\n");
     } else {
