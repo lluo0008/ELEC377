@@ -36,13 +36,13 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
         
         int pageSize = PAGE_SIZE >> 10;
 
-        if (mm == NULL)
+        if (myTask->mm == NULL)
         {
             numChars += sprintf(page + numChars, "0\t0");
         }
         else
         {
-            numChars += sprintf(page + numChars, "%d\t%d", (mm->total_vm)*pageSize, (mm->rss)*pageSize); 
+            numChars += sprintf(page + numChars, "%d\t%d", (myTask->mm->total_vm)*pageSize, (myTask->mm->rss)*pageSize); 
         }
         // advance to next task
         do
