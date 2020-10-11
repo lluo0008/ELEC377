@@ -16,11 +16,11 @@ int cnt;
 
 int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, void * data){
 
-    int numChars;
+    int numChars = 0;
     int pageSize = PAGE_SIZE >> 10;
     if (fpos == 0){
 	    // write headers
-        numChars += sprintf(page, "PID\t");
+        numChars += sprintf(page + numChars, "PID\t");
         numChars += sprintf(page + numChars, "UID\t");
         numChars += sprintf(page + numChars, "VSZ\t");
         numChars += sprintf(page + numChars, "RSS\n");
