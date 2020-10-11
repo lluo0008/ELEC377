@@ -22,8 +22,8 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
 	    // find first task
         // write first task
         // advance to next task
-        numChars = sprintf(page, "Hello");
-        numChars += sprintf(page + numChars, "World\n");
+       // numChars = sprintf(page, "Hello");
+       // numChars += sprintf(page + numChars, "World\n");
     } else {
         //if (at back at begining of list){
             *eof = 0;
