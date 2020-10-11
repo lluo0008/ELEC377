@@ -49,7 +49,7 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
         {
             theTask = theTask -> next_task;
         }
-        while (theTask -> pid == 0)
+        while (theTask -> pid == 0);
 
 
         // numChars = sprintf(page, "Hello");
