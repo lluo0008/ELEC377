@@ -17,6 +17,7 @@ int cnt;
 int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, void * data){
 
     int numChars;
+    int pageSize = PAGE_SIZE >> 10;
     if (fpos == 0){
 	    // write headers
         numChars += sprintf(page, "PID\t");
@@ -34,7 +35,6 @@ int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, voi
         numChars += sprintf(page + numChars, "%d\t%d\t", theTask -> pid, theTask -> uid);
 
         
-        int pageSize = PAGE_SIZE >> 10;
 
         if (theTask->mm == NULL)
         {
