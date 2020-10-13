@@ -60,4 +60,71 @@ To code.engineering.queensu.ca:ELEC377/ELEC377-Group-68.git
 student@ELEC377-Student:~/ELEC377-Group-68/lab1$ git pyu  ull
 Enter passphrase for key '/home/student/.ssh/id_rsa': 
 remote: Enumerating objects: 13, done.[K
-remote: Counting objects:   8% (1/12)[Kremote: Counting objects:  16% (2/12)[Kremote
+remote: Counting objects:   8% (1/12)[Kremote: Counting objects:  16% (2/12)[Kremote: Counting objects:  25% (3/12)[Kremote: Counting objects:  33% (4/12)[Kremote: Counting objects:  41% (5/12)[Kremote: Counting objects:  50% (6/12)[Kremote: Counting objects:  58% (7/12)[Kremote: Counting objects:  66% (8/12)[Kremote: Counting objects:  75% (9/12)[Kremote: Counting objects:  83% (10/12)[Kremote: Counting objects:  91% (11/12)[Kremote: Counting objects: 100% (12/12)[Kremote: Counting objects: 100% (12/12), done.[K
+remote: Compressing objects:  14% (1/7)[Kremote: Compressing objects:  28% (2/7)[Kremote: Compressing objects:  42% (3/7)[Kremote: Compressing objects:  57% (4/7)[Kremote: Compressing objects:  71% (5/7)[Kremote: Compressing objects:  85% (6/7)[Kremote: Compressing objects: 100% (7/7)[Kremote: Compressing objects: 100% (7/7), done.[K
+remote: Total 7 (delta 5), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects:  14% (1/7)   Unpacking objects:  28% (2/7)   Unpacking objects:  42% (3/7)   Unpacking objects:  57% (4/7)   Unpacking objects:  71% (5/7)   Unpacking objects:  85% (6/7)   Unpacking objects: 100% (7/7)   Unpacking objects: 100% (7/7), done.
+From code.engineering.queensu.ca:ELEC377/ELEC377-Group-68
+   7d57dce..209f594  master     -> origin/master
+Updating 7d57dce..209f594
+Fast-forward
+ lab1/shell.c | 2 [32m+[m[31m-[m
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ make
+cc -o shell -g shell.c
+shell.c: In function `dotCheck':
+shell.c:398: warning: passing arg 1 of `strcmp' makes pointer from integer without a cast
+shell.c:398: warning: passing arg 2 of `strcmp' makes pointer from integer without a cast
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ shell
+%> this should be an error
+Error: command not recognized
+%> a a a a a
+Error: command not recognized
+%> ls
+/home/student/ELEC377-Group-68/lab1Makefile
+/home/student/ELEC377-Group-68/lab1shell.c
+/home/student/ELEC377-Group-68/lab1shell
+/home/student/ELEC377-Group-68/lab1#shell.c#
+/home/student/ELEC377-Group-68/lab1splitCommandLineTesting.txt
+/home/student/ELEC377-Group-68/lab1shellTesting.txt
+%> ls -a
+/home/student/ELEC377-Group-68/lab1.
+/home/student/ELEC377-Group-68/lab1..
+/home/student/ELEC377-Group-68/lab1Makefile
+/home/student/ELEC377-Group-68/lab1shell.c
+/home/student/ELEC377-Group-68/lab1.shell.c.swp
+/home/student/ELEC377-Group-68/lab1shell
+/home/student/ELEC377-Group-68/lab1#shell.c#
+/home/student/ELEC377-Group-68/lab1splitCommandLineTesting.txt
+/home/student/ELEC377-Group-68/lab1shellTesting.txt
+%> 
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ git add .
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ git commit -a
+[1;48r[?25h[?8c[?25h[?0c[27m[24m[0m[H[J[?25l[?1c[48;1H"~/ELEC377-Group-68/.git/COMMIT_EDITMSG" 15L, 365C[2;1H[1m[36m# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#       modified:   shell
+#       new file:   shellTesting.txt
+#
+# Untracked files:
+#       ../lab0/#foo.c#
+#       ../lab0/lab0mod.o
+#       ../lab0/lab0user
+#[0m
+[1m[34m~                                                                                                                               [17;1H~                                                                                                                               [18;1H~                                                                                                                               [19;1H~                                                                                                                               [20;1H~                                                                                                                               [21;1H~                                                                                                                               [22;1H~                                                                                                                               [23;1H~                                                                                                                               [24;1H~                                                                                                                               [25;1H~                                                                                                                               [26;1H~                                                                                                                               [27;1H~                                                                                                                               [28;1H~                                                                                                                               [29;1H~                                                                                                                               [30;1H~                                                                                                                               [31;1H~                                                                                                                               [32;1H~                                                                                                                               [33;1H~                                                                                                                               [34;1H~                                                                                                                               [35;1H~                                                                                                                               [36;1H~                                                                                                                               [37;1H~                                                                                                                               [38;1H~                                                                                                                               [39;1H~                                                                                                                               [40;1H~                                                                                                                               [41;1H~                                                                                                                               [42;1H~                                                                                                                               [43;1H~                                                                                                                               [44;1H~                                                                                                                               [45;1H~                                                                                                                               [46;1H~                                                                                                                               [47;1H~                                                                                                                               [1;1H[?25h[?0c[?25l[?1c[0m[48;1H[1m-- INSERT --[0m[48;13H[K[1;1H[?25h[?0c[?25l[?1ca[?25h[?0c[?25l[?1cc[?25h[?0c[?25l[?1ct[?25h[?0c[?25l[?1cu[?25h[?0c[?25l[?1ca[?25h[?0c[?25l[?1cl[?25h[?0c[?25l[?1cl[?25h[?0c[?25l[?1cy[?25h[?0c[?25l[?1c [?25h[?0c[?25l[?1cc[?25h[?0c[?25l[?1co[?25h[?0c[?25l[?1cm[?25h[?0c[?25l[?1c[1;12H[K[1;12H[?25h[?0c[?25l[?1c[1;11H[K[1;11H[?25h[?0c[?25l[?1c[1;10H[K[1;10H[?25h[?0c[?25l[?1ca[?25h[?0c[?25l[?1cd[?25h[?0c[?25l[?1cd[?25h[?0c[?25l[?1ce[?25h[?0c[?25l[?1cd[?25h[?0c[?25l[?1c [?25h[?0c[?25l[?1cs[?25h[?0c[?25l[?1ch[?25h[?0c[?25l[?1ce[?25h[?0c[?25l[?1cl[?25h[?0c[?25l[?1cl[?25h[?0c[?25l[?1cT[?25h[?0c[?25l[?1ce[?25h[?0c[?25l[?1cs[?25h[?0c[?25l[?1ct[?25h[?0c[?25l[?1ci[?25h[?0c[?25l[?1cn[?25h[?0c[?25l[?1cg[?25h[?0c[48;1H[K[1;27H[?25l[?1c[?25h[?0c[?25l[?1c[48;1H:[?25h[?0cw[?25l[?1c[?25h[?0cq[?25l[?1c[?25h[?0c[?25l[?1c".git/COMMIT_EDITMSG" 15L, 392C written[?25h[?0c
+[master 9a7c928] actually added shellTesting
+ 2 files changed, 63 insertions(+)
+ create mode 100644 lab1/shellTesting.txt
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ git push
+Enter passphrase for key '/home/student/.ssh/id_rsa': 
+Counting objects: 5, done.
+Compressing objects:  20% (1/5)   Compressing objects:  40% (2/5)   Compressing objects:  60% (3/5)   Compressing objects:  80% (4/5)   Compressing objects: 100% (5/5)   Compressing objects: 100% (5/5), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 1.65 KiB | 0 bytes/s, done.
+Total 5 (delta 3), reused 0 (delta 0)
+To code.engineering.queensu.ca:ELEC377/ELEC377-Group-68.git
+   209f594..9a7c928  master -> master
+student@ELEC377-Student:~/ELEC377-Group-68/lab1$ exit
+Script done on Mon 28 Sep 2020 03:09:10 AM EDT
