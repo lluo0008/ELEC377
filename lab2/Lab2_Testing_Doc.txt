@@ -9,7 +9,7 @@ psout.txt
     - ran the "ps -e" command in the shell, which is a pre-existing command built in with Linux.
 
 lab2out.txt
-    - ran the "cat /proc/lab2" command in the shell, which is the kernal module that we wrote.
+    - ran the "cat /proc/lab2" command in the shell, which is the kernel module that we wrote.
 
 The two files contain the exact same PID numbers for every line, with the exception of the last process, who's PID number increments after every command. This shows that our module is correct and working as expected. 
 
