@@ -1,0 +1,15 @@
+Lawrence Luo/20106509
+Kavin Mohan/20110565
+
+File names: psout.txt, lab2out.txt
+
+We performed the following tests:
+
+psout.txt
+    - ran the "ps -e" command in the shell, which is a pre-existing command built in with Linux.
+
+lab2out.txt
+    - ran the "cat /proc/lab2" command in the shell, which is the kernal module that we wrote.
+
+The two files contain the exact same PID numbers for every line, with the exception of the last process, who's PID number increments after every command. This shows that our module is correct and working as expected. 
+
