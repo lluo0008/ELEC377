@@ -13,7 +13,7 @@
 struct shared {
     int *lock;
     int in, out, count;
-    int[] buffer; 
+    char buffer[BUFFSIZE]; 
     int numProducers;
 };
 
