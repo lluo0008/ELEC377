@@ -44,7 +44,6 @@ int main (int argc, char *argv[]){
 	}
 	
     // put your code here..
-<<<<<<< HEAD
 	getMutex(&sharedPtr -> lock);
 	sharedPtr -> numProducers++;
 	releaseMutex(&sharedPtr -> lock);
@@ -64,9 +63,5 @@ int main (int argc, char *argv[]){
 	getMutex(&sharedPtr -> lock);
 	sharedPtr -> numProducers--;
 	releaseMutex(&sharedPtr -> lock);
-=======
-	
-
->>>>>>> 78b461986d0cb81dd2655cd532d0dbfac6c95ba0
 	return 0;
 }
