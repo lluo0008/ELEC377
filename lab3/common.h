@@ -11,6 +11,10 @@
 #define BUFFSIZE 5
 
 struct shared {
+    int *lock;
+    int in, out, count;
+    int[] buffer; 
+    int numProducers;
 };
 
 
