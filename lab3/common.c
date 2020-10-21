@@ -28,10 +28,14 @@ int test_and_set(int * lock){
 void getMutex(int *  lock){
 	// this should not return until it has mutual exclusion. Note that many versions of 
 	// this will probobly be running at the same time.
+	while(test_and_set(lock));
+
 
 }
 
 void releaseMutex(int * lock){
 	// set the mutex back to initial state so that somebody else can claim it
+
+	lock = FALSE;
 }
 
