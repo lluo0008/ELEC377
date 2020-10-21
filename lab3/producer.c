@@ -65,5 +65,3 @@ int main (int argc, char *argv[]){
 	releaseMutex(&sharedPtr -> lock);
 	return 0;
 }
-
-
