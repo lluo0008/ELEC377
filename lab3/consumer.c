@@ -42,7 +42,32 @@ int main (int argc, char *argv[]){
 	}
 	
     // put your code here...
-    
+    getMutex(&sharedPtr -> lock);
+	int numProd = shared -> numProducers;
+	releaseMutex(&sharedPtr -> lock);
+	char c;
+
+	bool charRead = true;
+	while(numProd && charRead)
+	{
+		charRead = false;
+		while(!charRead && numProd)
+		{
+			getMutex(&sharedPtr -> lock);
+			if(sharedPtr -> buffer != '\0')
+			{
+				c = sharedPtr -> buffer[0];
+				charRead = true;
+			}
+			else
+			{
+				numProd--;
+			}
+			releaseMutex(&sharedPtr -> lock);
+		}
+		putchar(c);
+	}
+
 	return 0;
 }
 
