@@ -55,7 +55,8 @@ int main (int argc, char *argv[]){
 			getMutex(&sharedPtr -> lock);
 
 			int counter;
-			for (int i = 0; i < BUFFSIZE) //checking the amount of elements in the buffer array
+			int i;
+			for (i = 0; i < BUFFSIZE; i++) //checking the amount of elements in the buffer array
 			{
 				if (sharedPtr -> buffer[i] != NULL || sharedPtr -> buffer[i] != '\0')
 				{
