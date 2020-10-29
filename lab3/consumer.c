@@ -43,21 +43,21 @@ int main (int argc, char *argv[]){
 	
     // put your code here...
     getMutex(&sharedPtr -> lock);
-	int numProd = shared -> numProducers;
+	int numProd = sharedPtr -> numProducers;
 	releaseMutex(&sharedPtr -> lock);
 	char c;
 
-	bool charRead = true;
+	int charRead = TRUE;
 	while(numProd && charRead)
 	{
-		charRead = false;
+		charRead = FALSE;
 		while(!charRead && numProd)
 		{
 			getMutex(&sharedPtr -> lock);
 			if(sharedPtr -> buffer != '\0')
 			{
 				c = sharedPtr -> buffer[0];
-				charRead = true;
+				charRead = TRUE;
 			}
 			else
 			{
