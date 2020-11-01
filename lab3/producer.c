@@ -2,6 +2,9 @@
 //	ELEC 377,  Lab 3
 //
 //  producer.c
+//  The producer reads in text from the input test file.
+// 	It then stores the text in the shared queue.
+//  
 //-
 
 #include <stdio.h>
@@ -53,16 +56,7 @@ int main (int argc, char *argv[]){
 		while(stored == FALSE)
 		{
 			getMutex(&sharedPtr -> lock);
-
-			int counter;
-			for (int i = 0; i < BUFFSIZE) //checking the amount of elements in the buffer array
-			{
-				if (sharedPtr -> buffer[i] != NULL || sharedPtr -> buffer[i] != '\0')
-				{
-					counter++;
-				}
-			}
-			if (counter != BUFFSIZE) //checking if the buffer array still has room left in it (i.e. it is not full)
+			if (sizeof(sharedPtr -> buffer) != BUFFSIZE)
 			{
 				stored = TRUE;
 			}
