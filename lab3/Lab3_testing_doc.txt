@@ -14,3 +14,7 @@ outTest1.txt: initially created as a blank text file, and had the consumer outpu
 outTest2.txt: initially created as a blank text file, and had the consumer output to this file. The output in this file is the result of running a single producer reading from inputTest1.txt, and the consumer outputting it into this file.
 
 When running multiple producers, each producer will be running in a separate console. The consumer will also be running in a separate console from all of the producers. 
+
+The command for running a producer is: ./producer < "input_filename"
+The command for running a consumer is: ./consumer > "output_filename"
+    - One can also add numbers after the "./producer " to number multiple producers and multiple consumers. 
