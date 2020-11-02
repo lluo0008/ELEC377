@@ -36,6 +36,6 @@ void getMutex(int * lock){
 void releaseMutex(int * lock){
 	// set the mutex back to initial state so that somebody else can claim it
 
-	lock = FALSE;
+	*lock = FALSE;
 }
 
