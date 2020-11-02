@@ -15,6 +15,6 @@ outTest2.txt: initially created as a blank text file, and had the consumer outpu
 
 When running multiple producers, each producer will be running in a separate console. The consumer will also be running in a separate console from all of the producers. 
 
-The command for running a producer is: ./producer < "input_filename"
-The command for running a consumer is: ./consumer > "output_filename"
+The command for running a producer is: ./producer < input_filename
+The command for running a consumer is: ./consumer > output_filename
     - One can also add numbers after the "./producer " to number multiple producers and multiple consumers. 
