@@ -57,6 +57,7 @@ int main (int argc, char *argv[]){
 			if(sharedPtr -> count > 0)
 			{
 				c = sharedPtr -> buffer[sharedPtr -> out];
+				printf(c);
 				sharedPtr -> out = (sharedPtr -> out + 1) % BUFFSIZE;
 				sharedPtr -> count--;
 				charRead = TRUE;
