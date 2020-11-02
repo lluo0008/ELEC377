@@ -69,7 +69,6 @@ int main (int argc, char *argv[]){
 		}
 		putchar(c);
 	}
-	printf("\b");
 	return 0;
 }
 
