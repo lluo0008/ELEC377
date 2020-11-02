@@ -2,6 +2,7 @@
 //    ELEC 377,  Lab 3
 //
 //  consumer.c
+//  The consumer receives information of the input that was read by the producer, and then outputs it from the shared buffer.
 //-
 
 #include <stdio.h>
