@@ -1,0 +1,20 @@
+Lawrence Luo/20106509
+Kavin Mohan/20110565
+
+File names: inputTest1.txt, inputTest2.txt, outTest1.txt, outTest2.txt
+
+We performed the following tests:
+
+Before conducting any tests, the memory will be reinitiated as 0 by running the command "meminit".
+
+inputTest1.txt: a text file containing characters that are all on the same line.
+inputTest2.txt: a text file containing multiple lines of characters.
+
+outTest1.txt: initially created as a blank text file, and had the consumer output to this file. The output in this file is the result of running 2 producers at the same time, one reading from inputTest1.txt and the other reading form inputTest2.txt, and the consumer outputs both producers' reads into this file.
+outTest2.txt: initially created as a blank text file, and had the consumer output to this file. The output in this file is the result of running a single producer reading from inputTest1.txt, and the consumer outputting it into this file.
+
+When running multiple producers, each producer will be running in a separate console. The consumer will also be running in a separate console from all of the producers. 
+
+The command for running a producer is: ./producer < input_filename
+The command for running a consumer is: ./consumer > output_filename
+    - One can also add numbers after the "./producer " to number multiple producers and multiple consumers. 
