@@ -48,16 +48,15 @@ int main (int argc, char *argv[]){
 	int c;
 
 	int charRead = TRUE;
-	while(numProd && charRead)
+	while(numProd > 0 && charRead)
 	{
 		charRead = FALSE;
-		while(charRead == FALSE && numProd)
+		while(charRead == FALSE && numProd > 0)
 		{
 			getMutex(&sharedPtr -> lock);
 			if(sharedPtr -> count > 0)
 			{
 				c = sharedPtr -> buffer[sharedPtr -> out];
-				printf(c);
 				sharedPtr -> out = (sharedPtr -> out + 1) % BUFFSIZE;
 				sharedPtr -> count--;
 				charRead = TRUE;
