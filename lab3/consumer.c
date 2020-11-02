@@ -67,7 +67,7 @@ int main (int argc, char *argv[]){
 			}
 			releaseMutex(&sharedPtr -> lock);
 		}
-		putchar(c);
+		if(charRead) putchar(c);
 	}
 	return 0;
 }
