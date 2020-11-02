@@ -50,27 +50,35 @@ int main (int argc, char *argv[]){
 	getMutex(&sharedPtr -> lock);
 	sharedPtr -> numProducers++;
 	releaseMutex(&sharedPtr -> lock);
-	while(getchar() != EOF)
+	while((c = getchar()) != EOF)
 	{
 		stored = FALSE;
 		while(stored == FALSE)
 		{
 			getMutex(&sharedPtr -> lock);
-			if (sizeof(sharedPtr -> buffer) != BUFFSIZE)
 
-			int counter;
-			int i;
-			for (i = 0; i < BUFFSIZE; i++) //checking the amount of elements in the buffer array
+			// int counter;
+			// int i;
+			// for (i = 0; i < BUFFSIZE; i++) //checking the amount of elements in the buffer array
+			// {
+			// 	if (sharedPtr -> buffer[i] != NULL || sharedPtr -> buffer[i] != '\0')
+			// 	{
+			// 		counter++;
+			// 	}
+			// }
+			// if (counter != BUFFSIZE) //checking if the buffer array still has room left in it (i.e. it is not full)
+			// {
+			// 	stored = TRUE;
+			// }
+
+			if(sharedPtr -> count < BUFFSIZE)
 			{
-				if (sharedPtr -> buffer[i] != NULL || sharedPtr -> buffer[i] != '\0')
-				{
-					counter++;
-				}
-			}
-			if (counter != BUFFSIZE) //checking if the buffer array still has room left in it (i.e. it is not full)
-			{
+				sharedPtr -> buffer[sharedPtr -> in] = c;
+				sharedPtr -> in = (sharedPtr -> in + 1) % BUFFSIZE;
+				sharedPtr -> count++;
 				stored = TRUE;
 			}
+			
 			releaseMutex(&sharedPtr -> lock);
 		}
 	}
