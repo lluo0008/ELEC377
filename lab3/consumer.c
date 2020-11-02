@@ -51,7 +51,7 @@ int main (int argc, char *argv[]){
 	while(numProd && charRead)
 	{
 		charRead = FALSE;
-		while(!charRead && numProd)
+		while(charRead == FALSE && numProd)
 		{
 			getMutex(&sharedPtr -> lock);
 			if(sharedPtr -> count > 0)
