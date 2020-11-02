@@ -1,7 +1,7 @@
 Lab 3 Program Description
 
 Kavin Mohan - 20110565
-Lawrence Luo - 20116509
+Lawrence Luo - 20106509
 
 Objective: Write a c program that uses a shared memory segment which sends information between processes. 
 In this case, the information is text or characters.The synchronization algorithim to be used is a mutual exlcusion test
