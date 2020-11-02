@@ -28,7 +28,7 @@ int test_and_set(int * lock){
 void getMutex(int * lock){
 	// this should not return until it has mutual exclusion. Note that many versions of 
 	// this will probobly be running at the same time.
-	while(test_and_set(*lock));
+	while(test_and_set(lock));
 
 
 }
