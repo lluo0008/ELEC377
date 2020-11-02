@@ -45,7 +45,7 @@ int main (int argc, char *argv[]){
     getMutex(&sharedPtr -> lock);
 	int numProd = sharedPtr -> numProducers;
 	releaseMutex(&sharedPtr -> lock);
-	char c;
+	int c;
 
 	int charRead = TRUE;
 	while(numProd && charRead)
@@ -54,14 +54,16 @@ int main (int argc, char *argv[]){
 		while(!charRead && numProd)
 		{
 			getMutex(&sharedPtr -> lock);
-			if(sharedPtr -> buffer != '\0')
+			if(sharedPtr -> count > 0)
 			{
-				c = sharedPtr -> buffer[0];
+				c = sharedPtr -> buffer[sharedPtr -> out];
+				sharedPtr -> out = (sharedPtr -> out + 1) % BUFFSIZE;
+				sharedPtr -> count--;
 				charRead = TRUE;
 			}
 			else
 			{
-				numProd--;
+				numProd = sharedPtr -> numProducers;
 			}
 			releaseMutex(&sharedPtr -> lock);
 		}
