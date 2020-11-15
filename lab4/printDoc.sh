@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "============================================================="
 
-for file in 'find . -print'; do
+for file in $(find .); do
     echo $file
 done
