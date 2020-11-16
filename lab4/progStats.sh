@@ -35,7 +35,7 @@ if [ -d "$1" ]; then
                     echo $printkline | tr ' ' ','
             fi
         done
-           if ["$modCheck" = false]
+           if [ "$modCheck" = false ]
                 then
                     echo "No Module Files"
             fi
