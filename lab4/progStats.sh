@@ -9,7 +9,7 @@ fi
 mainCheck= false
 modCheck = false
 
-if [-d "$1"]; then
+if [ -d "$1" ]; then
     echo "Main Files: "
     for file in 'find "$1" -type f -name '*.c''; do
         if grep -q "int main" $file
