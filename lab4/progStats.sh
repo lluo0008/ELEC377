@@ -18,7 +18,7 @@ if [ -d "$1" ]; then
                 fprintfNum="'grep -c fprintf $file'"
                 mainCheck=true
                 echo "$file $printfNum $fprintNum" | awk '{printf "%s: %d,%d\n", $1, $2, $3}'
-            fi
+        fi
         done  
         if [ "$mainCheck" = false ]
             then 
@@ -35,7 +35,7 @@ if [ -d "$1" ]; then
                     echo $printkline | tr ' ' ','
             fi
         done
-           if [ "$modCheck" = false ]
+            if [ "$modCheck" = false ]
                 then
                     echo "No Module Files"
             fi
