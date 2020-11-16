@@ -2,7 +2,7 @@
 
 if [ $n -ne 1]
 then 
-    echo "Usage $0 directoryname"
+    echo "Usage $0 directoryname."
     exit 1
 fi 
 
@@ -11,7 +11,7 @@ modCheck = false
 
 if [-d "$1"]; then
     echo "Main Files: "
-    for file in 'find "$1" -type f -name '*.c'': do
+    for file in 'find "$1" -type f -name '*.c''; do
         if grep -q "int main" $file
             then
                 printfNum="'grep -c printf $file'"
@@ -26,7 +26,7 @@ if [-d "$1"]; then
         fi
 
         echo "Module Files: "
-        for file in 'find "$1" -type f -name '*.c'': do
+        for file in 'find "$1" -type f -name '*.c''; do
             if grep -q "init_module" $file
                 then
                     printkline = 'grep -n printk $file | sed -e 's/:.*$// '
