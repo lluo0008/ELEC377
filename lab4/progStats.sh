@@ -32,7 +32,7 @@ if [ -d "$1" ]; then
         if grep -q "init_module" $file
             then
                 echo test2
-                printkline='grep -n printk $file | sed -e 's/:.*$//' '
+                printkline=$(grep -n printk $file | sed -e 's/:.*$//')
                 modCheck=true
                 echo "$file" | awk '{printf "%s: ", $1}'
                 echo $printkline | tr ' ' ','
