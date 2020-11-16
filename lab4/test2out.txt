@@ -1,0 +1,4 @@
+Main Files: 
+labs/lab0/lab0user.c: 1,1
+Module Files: 
+labs/lab0/lab0mod.c: 77,80,108
