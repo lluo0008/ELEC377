@@ -6,8 +6,8 @@ then
     exit 1
 fi 
 
-mainCheck= false
-modCheck= false
+mainCheck=false
+modCheck=false
 
 if [ -d "$1" ]; then
     echo "Main Files: "
@@ -30,7 +30,7 @@ if [ -d "$1" ]; then
         if grep -q "init_module" $file
             then
                 printkline='grep -n printk $file | sed -e 's/:.*$//' '
-                modCheck= true
+                modCheck=true
                 echo "$file" | awk '{printf "%s: ", $1}'
                 echo $printkline | tr ' ' ','
         fi
