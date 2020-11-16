@@ -12,12 +12,12 @@ modCheck= false
 if [ -d "$1" ]; then
     echo "Main Files: "
     for file in 'find "$1" -type f -name '*.c''; do
-        if grep -c "int main" $file
+        if grep -q "int main" $file
             then
                 printfNum="'grep -c printf $file'"
                 fprintfNum="'grep -c fprintf $file'"
                 mainCheck=true
-                echo "$file $printfNum $fprintNum" | awk '{printf "%s: %d,%d\n", $1, $2, $3}'
+                echo "$file $printfNum $fprintfNum" | awk '{printf "%s: %d,%d\n", $1, $2, $3}'
         fi
     done  
     if [ "$mainCheck" = false ]
@@ -27,7 +27,7 @@ if [ -d "$1" ]; then
 
     echo "Module Files: "
     for file in 'find "$1" -type f -name '*.c''; do
-        if grep -c "init_module" $file
+        if grep -q "init_module" $file
             then
                 printkline='grep -n printk $file | sed -e 's/:.*$//' '
                 modCheck= true
