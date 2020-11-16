@@ -14,6 +14,7 @@ if [ -d "$1" ]; then
     for file in 'find "$1" -type f -name "*.c"'; do
         if grep -q "int main" $file
             then
+                echo test
                 printfNum='grep -c "[^f]printf" $file'
                 fprintfNum='grep -c "fprintf" $file'
                 mainCheck=true
