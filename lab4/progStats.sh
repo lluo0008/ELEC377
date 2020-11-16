@@ -13,7 +13,7 @@ if [ -d "$1" ]; then
     echo "Main Files: "
     for file in 'find "$1" -type f -name "*.c"'; do
         grep -q "int main" $file
-        if ( $? == 0 )
+        if (( $? == 0 ))
             then
                 echo test
                 printfNum='grep -c "[^f]printf" $file'
