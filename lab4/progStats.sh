@@ -11,7 +11,7 @@ modCheck=false
 
 if [ -d "$1" ]; then
     echo "Main Files: "
-    for file in 'find "$1" -type f -name "*.c"'; do
+    for file in 'find $1 -type f -name "*.c"'; do
         grep "int main" $file -c
         echo test
         if (( $? == 0 )); then
@@ -28,7 +28,7 @@ if [ -d "$1" ]; then
     fi
 
     echo "Module Files: "
-    for file in 'find "$1" -type f -name '*.c''; do
+    for file in 'find $1 -type f -name '*.c''; do
         if grep -c "init_module" $file
             then
                 echo test2
