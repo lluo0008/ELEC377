@@ -29,7 +29,7 @@ if [-d "$1"]; then
         for file in 'find "$1" -type f -name '*.c''; do
             if grep -q "init_module" $file
                 then
-                    printkline = 'grep -n printk $file | sed -e 's/:.*$// '
+                    printkline = 'grep -n printk $file | sed -e 's/:.*$//' '
                     modCheck = true
                     echo "$file" | awk '{printf "%s: ", $1}'
                     echo $printkline | tr ' ' ','
