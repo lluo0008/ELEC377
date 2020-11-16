@@ -12,7 +12,7 @@ modCheck= false
 if [ -d "$1" ]; then
     echo "Main Files: "
     for file in 'find "$1" -type f -name '*.c''; do
-        if [ 'grep -q "int main" $file' ]
+        if [ $(grep -q "int main" $file) ]
             then
                 printfNum="'grep -c printf $file'"
                 fprintfNum="'grep -c fprintf $file'"
@@ -27,7 +27,7 @@ if [ -d "$1" ]; then
 
     echo "Module Files: "
     for file in 'find "$1" -type f -name '*.c''; do
-        if [ 'grep -q "init_module" $file' ]
+        if [ $(grep -q "init_module" $file) ]
             then
                 printkline='grep -n printk $file | sed -e 's/:.*$//' '
                 modCheck= true
