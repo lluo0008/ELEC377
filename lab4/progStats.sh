@@ -29,9 +29,10 @@ if [ -d "$1" ]; then
 
     echo "Module Files: "
     for file in 'find "$1" -type f -name '*.c''; do
+        echo test2
         if grep -q "init_module" $file
             then
-                echo test2
+                
                 printkline='grep -n printk $file | sed -e 's/:.*$//' '
                 modCheck=true
                 echo "$file" | awk '{printf "%s: ", $1}'
