@@ -14,7 +14,7 @@ if [ -d "$1" ]; then
     for file in 'find "$1" -type f -name "*.c"'; do
         if grep -q "int main" $file
             then
-                printfNum='grep -c "printf" $file'
+                printfNum='grep -c "[^f]printf" $file'
                 fprintfNum='grep -c "fprintf" $file'
                 mainCheck=true
                 echo "$file $printfNum $fprintfNum" | awk '{printf "%s: %d,%d\n", $1, $2, $3}'
