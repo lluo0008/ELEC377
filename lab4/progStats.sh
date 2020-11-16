@@ -7,7 +7,7 @@ then
 fi 
 
 mainCheck= false
-modCheck = false
+modCheck= false
 
 if [ -d "$1" ]; then
     echo "Main Files: "
