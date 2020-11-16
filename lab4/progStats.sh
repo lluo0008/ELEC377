@@ -16,8 +16,8 @@ if [ -d "$1" ]; then
         echo $file
         if (( $? == 0 )); then
             
-            printfNum='grep -c "[^f]printf" $file'
-            fprintfNum='grep -c "fprintf" $file'
+            printfNum=$(grep -c "[^f]printf" $file)
+            fprintfNum=$(grep -c "fprintf" $file)
             mainCheck=true
             echo "$file $printfNum $fprintfNum" | awk '{printf "%s: %d,%d\n", $1, $2, $3}'
         fi
