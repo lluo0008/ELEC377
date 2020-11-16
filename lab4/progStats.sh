@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $n -ne 1 ]
+if [ $# -ne 1 ]
 then 
     echo "Usage $0 directoryname."
     exit 1
