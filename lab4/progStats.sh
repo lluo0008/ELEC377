@@ -12,8 +12,8 @@ modCheck=false
 if [ -d "$1" ]; then
     echo "Main Files: "
     for file in 'find "$1" -type f -name "*.c"'; do
-        echo test1
-        if grep -q "int main" $file
+        grep -q "int main" $file
+        if ( $? == 0 )
             then
                 echo test
                 printfNum='grep -c "[^f]printf" $file'
