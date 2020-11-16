@@ -12,6 +12,7 @@ modCheck=false
 if [ -d "$1" ]; then
     echo "Main Files: "
     for file in 'find "$1" -type f -name "*.c"'; do
+        echo test1
         if grep -q "int main" $file
             then
                 echo test
