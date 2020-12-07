@@ -178,7 +178,7 @@ char * compromise =
 
 
 void Attack(FILE *outfile){
-    fprintf(outfile,compromise);
+    fprintf(outfile,compromise1);
     fflush(outfile);
 }
 
