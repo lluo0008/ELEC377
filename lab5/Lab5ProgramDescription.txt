@@ -1,0 +1,43 @@
+Lab 5 Program Documentation
+
+Lawrence Luo - 20106509
+Kavin Mohan - 20110565
+
+SELFCOMP.c
+This writes contents of 'exploit' array to buffer in 'foo' method.
+The 'nop' instructions are used at the beginning of the exploit to ensure
+the return address at the end of the exploit is aligned at the end of the 
+stick in the 'foo' method. After this, the 'eip' register takes the address returned by 'foo'. 
+This causes the program counter to point to the beginning of the exploit code.
+The program counter now executes the exploit as it increments continuously. 
+The output of this program is in test1.txt.
+
+Buffer Address:    0x40,0x97,0x04,0x08
+Total NOP Instructions:  2 NOP Padding 
+String Size:              105 = 2 NOP Padding + 103 exploit commands + 1 Null Characters 
+
+CLIENT.c
+The main function of the client.c is to send the exploit string to the server.
+The 'gets' function read this data from the client. The exploit is executed on the
+server and uses the 'cat' command to print '/etc/passwd/' file which is then
+sent back to the client. 
+Th output was saved into test2.txt.
+
+Buffer Address:    0x40,0x9c,0x04,0x08, 
+Total NOP Instructions:   25 NOP Padding 
+String Size:              130 = 103 exploit commands + 25 NOP Padding + 1 Newline Character + 1 Null Character
+
+EXPLOIT
+The exploit code is given in assembly, its unix equivalent is:
+ 	
+ 	sh -c "cat /etc/passwd; exit"
+
+The main goal of the exploit is to adjust the program counter to point to 
+the beginning of the code we want to execute. It does this by writing a buffer to
+the stack, this causes the return address to overflow into the beginning of the 
+exploit. The system call for the 'execve' is 0x0b, stored in eax. The name of this 
+command is '/bin/sh', stored in ebx. The ecx register contains a pointer to the
+arguments of the command above. The edx register contains null.
+
+This structure has to be organized in memory during compilation to make sure
+the return address points to the beginning of the exploit.
