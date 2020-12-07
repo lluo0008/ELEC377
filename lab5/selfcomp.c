@@ -10,12 +10,12 @@ void foo();
 int main(){
 
     char *exploit =
-     "XXX"
-     "XXXXXXXXXXXXXXXXXXXX"
-     "XXXXXXXXXXXXXXXXXXXX"
-     "XXXXXXXXXXXXXXXXXXXX"
-	 "XXXXXXXXXXXXXXXXXXXX"
-	 "XXXXXXXXXXXXXXXXXXXX"
+     "xxxx"
+     "xxxxxxxxxxxxxxxxxxxx"
+     "xxxxxxxxxxxxxxxxxxxx"
+     "xxxxxxxxxxxxxxxxxxxx"
+	 "xxxxxxxxxxxxxxxxxxxx"
+	 "xxxxxxxxxxxxxxxxxxxx"
 	 "WXYZ";
 
     char exploit2[10] = {
