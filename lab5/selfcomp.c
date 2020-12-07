@@ -95,8 +95,8 @@ int main(){
     int i;
 
     y.x = foo;
-    for (i = 0; exploit[i]; i++){
-	y.buffer[i] = exploit[i];
+    for (i = 0; exploit2[i]; i++){
+	y.buffer[i] = exploit2[i];
     }
 
     (*y.x)();
