@@ -79,7 +79,7 @@ int main(){
 
 
     // buffer address goes here
-    0x080496a0,
+    0x080496A0,
     // NULL terminator
     0x00
 
