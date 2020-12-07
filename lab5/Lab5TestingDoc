@@ -1,0 +1,11 @@
+Lawrence Luo/20106509
+Kavin Mohan/20110565
+
+File names: test1.txt, test2.txt
+
+We performed the following tests:
+
+test1.txt: This file contains the output after running "selfcomp", which will retrieve the file at /etc/passwrd and print it.
+
+test2.txt: This file contains the output after running the server and client in the form of "server {port}", and then "client {port}" on a second console window. This will do the same thing, and retrieve the file at /etc/passwrd and print it.
+
