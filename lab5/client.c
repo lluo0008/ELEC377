@@ -104,7 +104,7 @@ char compromise1[10]={
 };
 
 char * compromise =
-    "x"
+    "xx"
     "xxxxxxxxxxxxxxxxxxxx"
     "xxxxxxxxxxxxxxxxxxxx"
     "xxxxxxxxxxxxxxxxxxxx"
