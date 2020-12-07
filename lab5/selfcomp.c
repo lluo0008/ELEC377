@@ -18,7 +18,7 @@ int main(){
 	 "xxxxxxxxxxxxxxxxxxxx"
 	 "WXYZ";
 
-    char exploit2[10] = {
+    char exploit2[105] = { //length of string is 100 x's + 4 for wxyz + 1 for null character = 105
     // exploit code goes here
         
     // buffer address goes here
