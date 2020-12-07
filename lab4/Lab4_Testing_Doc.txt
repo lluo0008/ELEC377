@@ -1,0 +1,14 @@
+Lawrence Luo/20106509
+Kavin Mohan/20110565
+
+File names: test1out.txt, test2out.txt
+
+We performed the following tests:
+
+test1out.txt: This file contains the output after running the script "printDoc.sh", which prints all of the comments in the files that end with .c or .h in the current directory. The script will also remove all of the // and the //+ and //- that are part of the comment lines. This file specifically contains the output to the command "printDoc.sh", executed in the ELEC377-Group-68/lab4/labs/lab1 directory. We are sure that the output of this script is correct because we manually checked the output with all of the comments that are in the .c and .h files in that directory, and it is the correct output.
+
+test2out.txt: This file contains the output after running the script "prodStats.sh", which prints how many printf and fprintf statements that exist in the directory that the user enters as the first argument. It will also print which lines the printk statements exist on within the .c files in the given directory. This file specifically contains the output to the command "progStats.sh labs/lab0", executed in the ELEC377-Group-68/lab4 directory. We are sure that the output of this script is correct because we manually used the find function (ctrl + f) in GitLab to count how many instances of printf and fprintf exist in .c files in the lab0 directory, as well as which lines the printk statements reside on, and made sure that is it the same numbers as the output of the progStats.sh script. 
+
+Note that to execute both printDoc.sh and progStats.sh, we had to make the scripts executable by using the command "chmod a+x [script_name]", where [script_name] is the name of the script.
+
+Note that instead of counting the amount of printf and fprintf statements on GitLab, we also could have just compared it with the correct output in the lab4 description document provided by Proffessor Dean.

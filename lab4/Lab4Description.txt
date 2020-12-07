@@ -1,0 +1,28 @@
+Lab 4 Program Documentation
+
+Lawrence Luo - 20106509
+Kavin Mohan - 20110565
+
+Script 1
+
+
+The first script first includes a formatted line using the echo command.
+It then extracts all blocks of line comments. These start with //+ and 
+end //-. It then uses the sed command to replace the comment characters with 
+emptiness and makes sure to only check files that end in .c or .h. 
+
+
+
+Script 2
+
+The second script takes in a path as an argument and finds all the .c files
+to produce the following information. For source files, it displays the path
+of the file and the number of printf and fprintf. For module files, it displays
+the path of the file and the numbers of the lines that contain printk.
+To accomplish this, two variables called mainCheck and modCheck are declared
+and initialized to false. The program uses the grep command to check for "int main"
+or "init_module". It then sets the corresponding check variable to true and uses
+grep with either a -c flag for count or -n flag for line number. Any check variable that 
+is left as false will have a corresponding message stating there are no main files or 
+no module files.
+
