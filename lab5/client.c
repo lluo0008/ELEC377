@@ -167,7 +167,7 @@ char compromise1[130]={ //124 x's + 4 for wxyz + 2 for newline and null = 130
 };
 
 char * compromise =
-    "xxx"
+    "xxxx"
     "xxxxxxxxxxxxxxxxxxxx"
     "xxxxxxxxxxxxxxxxxxxx"
     "xxxxxxxxxxxxxxxxxxxx"
