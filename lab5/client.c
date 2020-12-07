@@ -106,6 +106,7 @@ char compromise1[10]={
 char * compromise =
     "xxxxxxxxxxxxxxxxxxxx"
     "xxxxxxxxxxxxxxxxxxxx"
+    "xxxxxxxxxxxxxxxxxxxx"
     "WXYZ\n";
 
 
