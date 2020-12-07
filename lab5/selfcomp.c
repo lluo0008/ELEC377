@@ -10,7 +10,7 @@ void foo();
 int main(){
 
     char *exploit =
-     "XXXXXXXXXXXXXXX"
+     "XXXXXXXXXXXXXXXXX"
      "XXXXXXXXXXXXXXXXXXXX"
      "XXXXXXXXXXXXXXXXXXXX"
 	 "XXXXXXXXXXXXXXXXXXXX"
